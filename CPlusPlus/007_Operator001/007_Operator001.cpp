@@ -69,4 +69,6 @@ int main()
 	bResult = true || true; // 둘중 하나라도 참이라면 참, 모두 거짓이라면 거짓
 	bResult = true || false;
 	bResult = false || false;
+
+	Left = Left + 3;
 }
