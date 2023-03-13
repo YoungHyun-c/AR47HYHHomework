@@ -11,6 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "004_Var", "004_Var\004_Var.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{01259C4E-E75D-4A6B-8E4F-C9F9D82C4B4D}"
 	ProjectSection(SolutionItems) = preProject
+		메모리영역.txt = 메모리영역.txt
 		용어설명.txt = 용어설명.txt
 	EndProjectSection
 EndProject
@@ -31,6 +32,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "012_FunctionAndMemory", "012_FunctionAndMemory\012_FunctionAndMemory.vcxproj", "{14217FFF-4010-4975-80A9-604C94D2A0E1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "002_Compaile", "002_Compaile\002_Compaile.vcxproj", "{6E0A41F2-A0D2-4F0D-8312-A8558453D8E9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "013_Function", "013_Function\013_Function.vcxproj", "{877FE5A8-434D-4C13-84AF-1DDD95B60853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +139,14 @@ Global
 		{6E0A41F2-A0D2-4F0D-8312-A8558453D8E9}.Release|x64.Build.0 = Release|x64
 		{6E0A41F2-A0D2-4F0D-8312-A8558453D8E9}.Release|x86.ActiveCfg = Release|Win32
 		{6E0A41F2-A0D2-4F0D-8312-A8558453D8E9}.Release|x86.Build.0 = Release|Win32
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Debug|x64.ActiveCfg = Debug|x64
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Debug|x64.Build.0 = Debug|x64
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Debug|x86.ActiveCfg = Debug|Win32
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Debug|x86.Build.0 = Debug|Win32
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Release|x64.ActiveCfg = Release|x64
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Release|x64.Build.0 = Release|x64
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Release|x86.ActiveCfg = Release|Win32
+		{877FE5A8-434D-4C13-84AF-1DDD95B60853}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
