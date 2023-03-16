@@ -14,7 +14,6 @@ inline void Test()
 int main()
 {
     Test();
-
     // 함수를 복붙하는 느낌으로 스택을 만들지 않도록
     // 최적화 할 수 있다면 해달라는 코드.
     //printf_s("Function");
