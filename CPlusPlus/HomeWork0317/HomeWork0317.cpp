@@ -42,12 +42,11 @@ int TrimDelete(char* _String)
 
 int StringToInt(const char* _String)
 {
-    long num = 0;
+
+    __int64 num = 0;
     int i = 0;
-    while (_String[i] && (_String[i] >= '0' && _String[i] <= '9'))
-    {
-        num = num * 10 + (_String[i] - '0');
-        i++;
+    for (i = 0; _String[i] != 0; i++) {
+        num = num * 10 + _String[i] - '0';
     }
     return num;
 }
@@ -61,7 +60,8 @@ int main()
     //TrimDelete(Arr0);
 
     //// 영어나 다른글자가 섞여 들어가있는 것을 가정하지 않는다. string을 int로
-    int RValue0 = StringToInt("1111");
-    
+    int RValue0 = StringToInt("1111121312312131233");
+
+    int a = 0;
 }
 
