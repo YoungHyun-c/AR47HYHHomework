@@ -1,6 +1,11 @@
 ﻿#include<iostream>
 
 //중단점 F9 눌러서 중단점 만들기
+int Plus(int _left, int _right)
+{
+	return _left + _right;
+}
+
 int main()
 {
 	int Left = 7;
@@ -69,6 +74,8 @@ int main()
 	bResult = true || true; // 둘중 하나라도 참이라면 참, 모두 거짓이라면 거짓
 	bResult = true || false;
 	bResult = false || false;
+
+	Left = Plus(Left, 3);
 
 	Left = Left + 3;
 }

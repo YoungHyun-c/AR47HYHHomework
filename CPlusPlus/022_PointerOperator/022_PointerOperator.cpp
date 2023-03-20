@@ -5,6 +5,8 @@
 
 void ValueChangePtr(int* Ptr)
 {
+    //int TestChange;
+    //Ptr = &TestChange;
     *Ptr = 0;
 }
 
@@ -13,20 +15,52 @@ void ValueChangeValue(int* Ptr)
     *Ptr = 0;
 }
 
+void Damage(int* _Ptr)
+{
+    *_Ptr -= 10;
+    if (*_Ptr <= 0)
+    {
+        int A = 0;
+    }
+}
+
 int main()
 {
-    // 100번지면
-    int Value = 10;
+    {
+        // 100번지면
+        int Value = 10;
 
-    int* Ptr = &Value;
+        int* Ptr = &Value;
 
-    // 그 위치의 메모리를 수정하겠다.
-    // 포인터 변수의 앞에 *을 붙이는 연산자는
-    // *Ptr 100번지의 값을 사용하겠다.
-    *Ptr = 20;
+        // 그 위치의 메모리를 사용하겠다.
+        // 포인터 변수의 앞에 *을 붙이는 연산자는
+        // *Ptr 100번지의 값을 사용하겠다.
+        *Ptr = 20;
 
-    ValueChangePtr(&Value);
-    ValueChangeValue(&Value);
+        ValueChangePtr(&Value);
+        ValueChangePtr(Ptr);
 
-    int a = 0;
+        int a = 0;
+    }
+
+    {
+        int PlayerHp = 100;
+
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        
+        // 무기 장비하고
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+
+        //레벨업하고
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+        Damage(&PlayerHp);
+    }
 }

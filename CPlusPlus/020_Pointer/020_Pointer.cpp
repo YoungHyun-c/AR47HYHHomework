@@ -21,27 +21,33 @@ int main()
     // 일반적인 자료형이 가능하고
     int* Ptr;
     bool* Ptrb;
-    
     // 램에서의 위치를 의미하게 됩니다.
+    
 
-    int Value = 10;
+    int Value0 = 10;
+    int Value1 = 10;
 
     // 이름이 값 그자체를 의미하게 된다.
     // 100번지에 있는 10이 되는 것.
-    Value < 9;
+    // Value < 9;
     
     // Value가 표현하는 값이 2가지 있다.
     // 내부의 자신의 진짜 값 10
     // 그 이름을 통해서 램에 존재하게 되는 자신의 위치인 100번지
-    int* ValuePtr = &Value;
+    int* ValuePtr0 = &Value0;
+    int* ValuePtr1 = &Value1;
 
     // 그 주소 (램에서의 위치의 정수값)을 전문적으로 다루는
 
     // 형변환이라는 것을 맛만 보여드립니다.
     // 어떤 자료형 앞에 (자료형)이 자료형으로 바꿀 수 있으면
     // 바꿔달라는 뜻이 됩니다.
-    __int64 Address = 0;
-    Address = (__int64)ValuePtr;
+    __int64 Address0 = 0;
+    Address0 = (__int64)ValuePtr0;
+
+    __int64 Address1 = 0;
+    Address1 = (__int64)ValuePtr1;
+    
     // Address의 주소값을 보면 임의 대로의 주소 값을 부여해 주는 건데.
     // 운영체제가 임의대로 주소를 부여해주는 것은 virtual 주소라고 합니다.
 
