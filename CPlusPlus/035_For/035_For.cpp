@@ -40,7 +40,7 @@ int main()
     {
         ++Count;
     }
-
+    
     // 비교문의 조건이 false가 되면 for문이 종료된다.
     for (int i = 0; i < 100; i++)
     {
