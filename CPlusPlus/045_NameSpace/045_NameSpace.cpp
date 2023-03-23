@@ -88,4 +88,12 @@ int main()
     // c++ 만든 사람들이 품질 보증한 객체 혹은 클래스 혹은 모든 코드적 요소들
 
     // std::TestFuction();
+
+
+    // 500 번지의 플레이어를 대표하는 NewPlayer
+    Player NewPlayer;
+
+    // 일반적으로 멤버변수일경우에는 아무런 의미도 없어요.
+    // Player::Hp;
+
 }

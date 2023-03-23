@@ -35,6 +35,9 @@ int main()
     short* Ptr3 = &NewPlayer.Value9;
     char* Ptr4 = &NewPlayer.TTT;
 
+    int ValuePtr0 = 0;
+    
+
    
     int Size = sizeof(Player);
 
