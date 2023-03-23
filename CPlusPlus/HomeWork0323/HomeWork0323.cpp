@@ -30,6 +30,46 @@ public:
 	{
 		return Value + _Value;
 	}
+
+	int operator - (int _Value)
+	{
+		return Value - _Value;
+	}
+
+	int operator / (int _Value)
+	{
+		return Value / _Value;
+	}
+
+	int operator % (int _Value)
+	{
+		return Value / _Value;
+	}
+
+	int operator * (int _Value)
+	{
+		return Value / _Value;
+	}
+
+	int operator & (int _Value)
+	{
+		return false;
+	}
+
+	int operator | (int _Value)
+	{
+		return true;
+	}
+
+	int operator += (int _Value)
+	{
+		return Value += _Value;
+	}
+
+	int operator != (int _Value)
+	{
+		return true;
+	}
 };
 
 
@@ -44,6 +84,16 @@ int main()
 		// 만들어 보면 된다.
 		Number Value = 10;
 		Value + 10;
+		Value - 10;
+		Value / 10;
+		Value % 10;
+		Value * 10;
+		Value += 10;
+
+		Value & 10;
+		Value | 10;
+		
+		(Value != 10) ? 20 : 40;
 
 		if (Value == 10)
 		{
