@@ -13,6 +13,7 @@ class Player
 	// 접근제한 지정자는 만들어진 위치부터 아래까지 새로운 접근제한 지정자가
 	// 없으면 전부다 자신의 접근제한 지정자로 판단한다.
 
+	
 	//			  내부코드	자식코드		외부
 public:			//  공개		 공개		공개
 	int Att = 10;
@@ -30,16 +31,45 @@ class Monster {
 	int Def = 2;
 	int Hp = 100;
 	int Speed = 3;
+
+	// 클래스 내부
+public:
+	int SetHp()
+	{
+		return Hp;
+	}
+
+	void SetHp(int _Hp)
+	{
+		// 수정할 수 있는 접점이 적을수록 좋다 하나입니다.
+		Hp = _Hp;
+
+		if (0 == _Hp)
+		{
+			int a = 0;
+		}
+	}
 };
 
 int main()
 {
 	// 외부
-	Monster NewMonsetr;
+	Monster NewMonster;
 	// NewMonster.
+	NewMonster.SetHp(20);
+
+	NewMonster.SetHp(0);
 
 	Player NewPlayer = Player();
 	// NewPlayer. Att, Def
 
+
+	// 보통 행동을 만들 때 public으로 만듭니다.
+	// NewPlayer.Att
+
+	// 객체의 사용법 . 누르고
+	// 플레이어 내부에 있는 것들을 끄집어 내서 사용한다.
+	// NewPlayer.Att
+	// NewPlayer.Speed
 }
 
