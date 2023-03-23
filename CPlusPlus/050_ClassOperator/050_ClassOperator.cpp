@@ -14,6 +14,17 @@ public:
 	{
 
 	}
+
+	int operator[](size_t _Value)
+	{
+		return Value;
+	}
+
+	bool operator == (int _Value)
+	{
+		return false;
+	}
+
 	// 클래스가 연산자를 사용할 수 있게 만들어주는 것.
 	int operator + (int _Value)
 	{
@@ -33,6 +44,13 @@ int main()
 		// 만들어 보면 된다.
 		Number Value = 10;
 		Value + 10;
+
+		if (Value == 10)
+		{
+			int a = 0;
+		}
+
+		int Test = Value[2000];
 	}
 }
 

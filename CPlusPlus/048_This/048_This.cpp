@@ -10,9 +10,15 @@ public:
     {
 
     }
-    void Damage(int _Att)
+    void Damage(/*Player* const this*/int _Att)
     {
-        Hp -= _Att;
+        // __int64 Address = (__int64)&Hp;
+        // 눈에 보이지 않지만 멤버함수에는
+        // 첫번째 인자에는 무조건 적으로 자기자신의 클래스의 포인터가 들어가게 됩니다.
+
+        // * const이기 때문에 this가 가리키는 대상은 바꿀 수 없다.
+        // this = nullptr;
+        this-> Hp -= _Att;
     }
     inline int GetHp()
     {
@@ -33,16 +39,59 @@ public:
 
 protected:
 
-private:
+public:
     int Hp = 100;
     int Att = 10;
 };
 
+// 300번지가 들어간다.
+void GlobalDamage(Player* _this, int _Att)
+{
+    // 클래스를 포인터로 사용할때는
+    // 내부에 있는 멤버변수에 접근하는 방식이
+    // .이 아니고 -> 로 변경된다.
+
+    // 300번지에 있는 hp
+    _this->Hp -= _Att;
+}
+
+// 200번지에 새로운 플레이어를 만든다.
+//void GlobalDamageValue(Player _NewPlayer, int _Att)
+//{
+//    // 클래스를 포인터로 사용할때는
+//    // 내부에 있는 멤버변수에 접근하는 방식이
+//    // .이 아니고 -> 로 변경된다.
+//    _NewPlayer.Hp -= _Att;
+//}
+
+// 500번지에 있는 4바이트 30
+void Test(int _Value)
+{
+    _Value = 30128;
+}
+
 int main()
 {
+    // 700 번지에 있는 4바이트 30이죠?
+    int Value = 30;
+    Test(Value);
+
+    // 300
     Player NewPlayer0 = Player();
+    // NewPlayer0.Hp -= 20;
+
+    // 350
     Player NewPlayer1 = Player();
 
+    // GlobalDamageValue(NewPlayer0, 20);
+    // GlobalDamage(&NewPlayer0, 20);
+    // 각 객체들이 함수를 호출해서 자신의 멤버변수들을 알아서 잘 찾아서 바꿀 수 있을까?
+    // 80
+    NewPlayer0.Damage(/*&NewPlayer0,*/ 20);
+
+    // GlobalDamage(&NewPlayer1, 50);
+    // 50
+    NewPlayer1.Damage(/*&NewPlayer1,*/ 50);
 
     NewPlayer0.Damage(20);
 

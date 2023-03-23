@@ -5,11 +5,48 @@
 
 class Player
 {
+public:
+    void Damage(/*Player* const this*/)
+    {
+        //
+        // this
 
+        this->Hp = 20;
+        printf_s("맞았습니다.");
+    }
+
+public:
+    int Hp = 100;
+    int Att = 10;
 };
+
+//void Player::Damage(Player* const this)
+//[
+//    //
+//    // this
+//
+//    this->Hp = 20;
+//    printf_s("맞았습니다.");
+//]
 
 int main()
 {
-    
+    int Value = int();
+    Player NewPlayer = Player();
+
+    int* ValuePtr = nullptr;
+    Player* NewPlayerPtr = &NewPlayer;
+
+    // NewPlayerPty = nullPtr;
+    NewPlayerPtr->Damage(/*NewPlayerPtr*/);
+
+    // bPlayer::Damage(/*NewPlayerPtr*/);
+
+    // ValuePtr = nullPtr;
+    // nullPtr 익셉션이 납니다.
+    // *ValuePtr = 20;
+
+    // NewPlayerPtr = nullptr;
+    // NewPlaterPtr-> Hp = 20;
 }
 
