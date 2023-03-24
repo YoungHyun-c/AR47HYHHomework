@@ -104,3 +104,15 @@ int main()
 	}
 }
 
+
+
+//다시 정의할 수 없는 연산자
+//연산자		이름
+//.			멤버 선택
+//.*		멤버 포인터 선택
+//::		범위 확인
+//? :		조건부
+//#			문자열로 전처리기 변환
+//##		전처리기 연결
+
+// https://learn.microsoft.com/ko-kr/cpp/cpp/operator-overloading?view=msvc-170
