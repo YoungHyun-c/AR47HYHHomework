@@ -234,6 +234,12 @@
 
 
 // 3번째 방법
+void PlayerMove(int* PlayerY, int* PlayerX, int _Y, int _X)
+{
+	*PlayerY += _Y;
+	*PlayerX += _X;
+}
+
 int main()
 {
 	const int ScreenYSize = 3;
@@ -254,8 +260,6 @@ int main()
 	int PlayerX = ScreenXSize / 2;
 	
 
-	Arr[PlayerY][PlayerX] = '*';
-
 	while (true)
 	{
 		system("cls");
@@ -264,7 +268,14 @@ int main()
 		{
 			for (size_t x = 0; x < ScreenXSize; x++)
 			{
-				printf_s("%c", Arr[y][x]);
+				if (PlayerY == y && PlayerX == x)
+				{
+					printf_s("*");
+				}
+				else
+				{
+					printf_s("%c", Arr[y][x]);
+				}
 			}
 			printf_s("\n");
 		}
@@ -285,21 +296,19 @@ int main()
 		{
 		case'a':
 		case'A':
-			PlayerX -= 1;
+			PlayerMove(&PlayerY, &PlayerX, 0, -1);
 			break;
 		case'd':
 		case'D':
-			PlayerX += 1;
+			PlayerMove(&PlayerY, &PlayerX, 0, 1);
 			break;
 		case'w':
 		case'W':
-			Arr[PlayerY - 1][PlayerX] = '*';
-			Arr[PlayerY][PlayerX] = 'a';
+			PlayerMove(&PlayerY, &PlayerX, -1, 0);
 			break;
 		case's':
 		case'S':
-			Arr[PlayerY + 1][PlayerX] = '*';
-			Arr[PlayerY][PlayerX] = 'a';
+			PlayerMove(&PlayerY, &PlayerX, 1, 0);
 			break;
 		}
 		if (PlayerY < 0)
