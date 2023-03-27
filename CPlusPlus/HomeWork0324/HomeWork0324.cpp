@@ -233,7 +233,7 @@
 //}
 
 
-// 3번째 방법
+// 3번째 방법 플레이어 이동을 따로 함수로 만들기
 void PlayerMove(int* PlayerY, int* PlayerX, int _Y, int _X)
 {
 	*PlayerY += _Y;
