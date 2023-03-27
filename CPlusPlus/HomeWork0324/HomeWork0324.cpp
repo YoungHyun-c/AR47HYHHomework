@@ -234,101 +234,133 @@
 
 
 // 3번째 방법 플레이어 이동을 따로 함수로 만들기
-void PlayerMove(int* PlayerY, int* PlayerX, int _Y, int _X)
-{
-	*PlayerY += _Y;
-	*PlayerX += _X;
-}
+//void PlayerMove(int* PlayerY, int* PlayerX, int _Y, int _X)
+//{
+//	*PlayerY += _Y;
+//	*PlayerX += _X;
+//}
+//
+//int main()
+//{
+//	const int ScreenYSize = 3;
+//	const int ScreenXSize = 3;
+//
+//	char Arr[ScreenYSize][ScreenXSize] = { 0, };
+//	
+//	for (size_t y = 0; y < ScreenYSize; y++)
+//	{
+//		for (size_t x = 0; x < ScreenXSize; x++)
+//		{
+//			Arr[y][x] = 'a';
+//		}
+//
+//	}
+//
+//	int PlayerY = ScreenYSize / 2;
+//	int PlayerX = ScreenXSize / 2;
+//	
+//
+//	while (true)
+//	{
+//		system("cls");
+//
+//		for (size_t y = 0; y < ScreenYSize; y++)
+//		{
+//			for (size_t x = 0; x < ScreenXSize; x++)
+//			{
+//				if (PlayerY == y && PlayerX == x)
+//				{
+//					printf_s("*");
+//				}
+//				else
+//				{
+//					printf_s("%c", Arr[y][x]);
+//				}
+//			}
+//			printf_s("\n");
+//		}
+//
+//		if (0 == _kbhit())
+//		{
+//			Sleep(200);
+//			continue;
+//		}
+//
+//		char ch = _getch();
+//
+//		int PlayerXValue = PlayerX;
+//		int PlayerYValue = PlayerY;
+//
+//
+//		switch (ch)
+//		{
+//		case'a':
+//		case'A':
+//			PlayerMove(&PlayerY, &PlayerX, 0, -1);
+//			break;
+//		case'd':
+//		case'D':
+//			PlayerMove(&PlayerY, &PlayerX, 0, 1);
+//			break;
+//		case'w':
+//		case'W':
+//			PlayerMove(&PlayerY, &PlayerX, -1, 0);
+//			break;
+//		case's':
+//		case'S':
+//			PlayerMove(&PlayerY, &PlayerX, 1, 0);
+//			break;
+//		}
+//		if (PlayerY < 0)
+//		{
+//			PlayerY += 1;
+//		}
+//		else if (PlayerY > ScreenYSize - 1)
+//		{
+//			PlayerY -= 1;
+//		}
+//		else if (PlayerX > ScreenXSize - 1)
+//		{
+//			PlayerX -= 1;
+//		}
+//		else if (PlayerX < 0)
+//		{
+//			PlayerX += 1;
+//		}
+//		Sleep(200);
+//
+//
+//	}
+//}
 
-int main()
+
+// 선생님 풀이
+// 1. 플레이어 움직임 함수화 GetUpCheck() bool함수를 사용하여 움직였는지true or 안움직였는지 false
+// bool IsMoveCheck(int x, int y)
+// {
+//	~~~~~~~
+// }
+// 2. 장애물, 바깥 체크
+// 화면 바깥 체크
+// bool IsOverCheck(int x, int y)
+// 장애물 체크
+// bool IsGimikCheck(int x, int y) 
+// 3. 잔상 지우기
+// 맵을 클리어 -> 플레이어 위치에 * 그리기 -> 맵 다시 그리기.
+
+
+const int ScreenYSize = 3;
+const int ScreenXSize = 3;
+
+class ConsoleGameScreen
 {
+	// 클래스와 전역의 메모리 영역이 다르다고 봐야됨.
 	const int ScreenYSize = 3;
 	const int ScreenXSize = 3;
 
-	char Arr[ScreenYSize][ScreenXSize] = { 0, };
-	
-	for (size_t y = 0; y < ScreenYSize; y++)
-	{
-		for (size_t x = 0; x < ScreenXSize; x++)
-		{
-			Arr[y][x] = 'a';
-		}
+};
 
-	}
+int main()
+{
 
-	int PlayerY = ScreenYSize / 2;
-	int PlayerX = ScreenXSize / 2;
-	
-
-	while (true)
-	{
-		system("cls");
-
-		for (size_t y = 0; y < ScreenYSize; y++)
-		{
-			for (size_t x = 0; x < ScreenXSize; x++)
-			{
-				if (PlayerY == y && PlayerX == x)
-				{
-					printf_s("*");
-				}
-				else
-				{
-					printf_s("%c", Arr[y][x]);
-				}
-			}
-			printf_s("\n");
-		}
-
-		if (0 == _kbhit())
-		{
-			Sleep(200);
-			continue;
-		}
-
-		char ch = _getch();
-
-		int PlayerXValue = PlayerX;
-		int PlayerYValue = PlayerY;
-
-
-		switch (ch)
-		{
-		case'a':
-		case'A':
-			PlayerMove(&PlayerY, &PlayerX, 0, -1);
-			break;
-		case'd':
-		case'D':
-			PlayerMove(&PlayerY, &PlayerX, 0, 1);
-			break;
-		case'w':
-		case'W':
-			PlayerMove(&PlayerY, &PlayerX, -1, 0);
-			break;
-		case's':
-		case'S':
-			PlayerMove(&PlayerY, &PlayerX, 1, 0);
-			break;
-		}
-		if (PlayerY < 0)
-		{
-			PlayerY += 1;
-		}
-		else if (PlayerY > ScreenYSize - 1)
-		{
-			PlayerY -= 1;
-		}
-		else if (PlayerX > ScreenXSize - 1)
-		{
-			PlayerX -= 1;
-		}
-		else if (PlayerX < 0)
-		{
-			PlayerX += 1;
-		}
-		Sleep(200);
-
-
-	}
 }
