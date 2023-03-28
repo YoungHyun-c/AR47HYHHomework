@@ -604,11 +604,6 @@ public:
 	}
 
 public:
-	// 이건 내일 합니다.
-	//int2() 
-	//{
-	//}
-
 	int2(int _X, int _Y)
 		: X(_X), Y(_Y)
 	{
@@ -620,9 +615,19 @@ public:
 // 근본오브 근본 수학 물리 
 class ConsoleGameScreen
 {
-	// 메모리 영역 자체가 달라졌다고 봐야합니다.
+private:
+	ConsoleGameScreen()
+	{
+	}
+	static ConsoleGameScreen MainScreen;
+
 public:
-	// 클래스 내부에 전역변수를 선언할수가 있습니다.
+	static ConsoleGameScreen& GetMainScreen()
+	{
+		return MainScreen;
+	}
+
+public:
 	static const int ScreenYSize = 5;
 	static const int ScreenXSize = 5;
 
@@ -697,6 +702,8 @@ private:
 
 };
 
+ConsoleGameScreen ConsoleGameScreen::MainScreen;
+
 /////////////////////////////////////////////////////////////////// 엔진
 
 
@@ -705,6 +712,11 @@ private:
 class Player
 {
 public:
+	Player()
+	{
+
+	}
+
 	int2 GetPos() const
 	{
 		return Pos;
@@ -716,7 +728,7 @@ public:
 	}
 
 	// 화면바깥으로 못나가게 하세요. 
-	void Input(const ConsoleGameScreen& _Screen)
+	void Input(ConsoleGameScreen& _Screen)
 	{
 		if (0 == _kbhit())
 		{
@@ -726,50 +738,44 @@ public:
 
 		char Ch = _getch();
 
+		int2 NextPos = { 0, 0 };
+
 		switch (Ch)
 		{
 		case 'a':
 		case 'A':
-			if (false == _Screen.IsScreenOver(Pos))
+			NextPos = Pos;
+			NextPos.X -= 1;
+			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 			{
 				Pos.X -= 1;
-			}
-			if (true == _Screen.IsScreenOver(Pos))
-			{
-				Pos.X += 1;
 			}
 			break;
 		case 'd':
 		case 'D':
-			if (false == _Screen.IsScreenOver(Pos))
+			NextPos = Pos;
+			NextPos.X += 1;
+			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 			{
 				Pos.X += 1;
-			}
-			if (true == _Screen.IsScreenOver(Pos))
-			{
-				Pos.X -= 1;
 			}
 			break;
 		case 'w':
 		case 'W':
-			if (false == _Screen.IsScreenOver(Pos))
+			NextPos = Pos;
+			NextPos.Y -= 1;
+			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 			{
 				Pos.Y -= 1;
-			}
-			if (true == _Screen.IsScreenOver(Pos))
-			{
-				Pos.Y += 1;
 			}
 			break;
 		case 's':
 		case 'S':
-			if (false == _Screen.IsScreenOver(Pos))
+			NextPos = Pos;
+			NextPos.Y += 1;
+			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 			{
 				Pos.Y += 1;
-			}
-			if (true == _Screen.IsScreenOver(Pos))
-			{
-				Pos.Y -= 1;
 			}
 			break;
 		default:
@@ -790,27 +796,25 @@ private:
 
 int main()
 {
-	ConsoleGameScreen NewScreen;
 	Player NewPlayer;
 
 	// int2 NewPos = int2{ 5, 5 };
 
-	int2 ScreenSize = NewScreen.GetScreenSize();
+	int2 ScreenSize = ConsoleGameScreen::GetMainScreen().GetScreenSize();
 	NewPlayer.SetPos(ScreenSize.Half());
 
 	while (true)
 	{
 		system("cls");
 
-		NewScreen.ScreenClear();
+		ConsoleGameScreen::GetMainScreen().ScreenClear();
 
-		NewScreen.SetScreenCharacter(NewPlayer.GetPos(), '*');
+		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewPlayer.GetPos(), '*');
 
-		NewScreen.ScreenPrint();
+		ConsoleGameScreen::GetMainScreen().ScreenPrint();
 
-		NewPlayer.Input(NewScreen);
+		NewPlayer.Input(ConsoleGameScreen::GetMainScreen());
 
 	}
-
 
 }

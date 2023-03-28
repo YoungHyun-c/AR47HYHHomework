@@ -15,18 +15,23 @@ class Monster;
 class Player
 {
 public:
-    int Hp = 100;
     int Att = 10;
+    int Hp = 100;
 public:
     // 이건 몬스터 가 있을거야.. 라는 뜻이 아니고
     // 몬스터를 알아야 한다.
-    // 
-    void Att(Monster* _Monster);
+    // void Att(Monster* _Monster);
 
     // 내부에서 Monster의 내용을 사용하게 되면
     // 전방선언으로도 해결이 안된다.
     // Monster가 Hp를 가지고 있는지 알아야겠다. <= 컴파일러가.
-    
+    void Attack(Monster _Monster);
+    //{
+        // 몬스터는 Hp를 가졌어?
+        // 몬스터의 크기는 얼마야?
+        // 몬스터는 어떤 생성자를 가지고 있어.
+        // _Monster->Hp -= 10;
+    //}
     
     // 전방선언을 해도 해결이 되는 경우가 존재한다.
     // 그냥 8바이트 주소값을 받아서 외부로 8바이트 주소값을 리턴하기만 하면 되는 함수다.
@@ -46,20 +51,38 @@ public:
     //}
 };
 
+class Player;
 class Monster
 {
 public:
     int Att = 10;
     int Hp = 100;
 public:
-    void Damage(Player* _Player)
-    {
-
-    }
+    void Attack(Player* _Player);
+    //{
+    //    _Player->Hp -= Att;
+    //}
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Player NewPlayer;
+    Monster NewMonster;
+
+    NewPlayer.Attack(NewMonster);
+    NewMonster.Attack(&NewPlayer);
+
+    NewPlayer.Test(&NewMonster);
+
+    //NewPlayer.Test2(NewMonster);
+}
+
+void Player::Attack(Monster _Monster)
+{
+    _Monster.Hp -= Att;
+}
+void Monster::Attack(Player* _Player)
+{
+    _Player->Hp -= Att;
 }
 
