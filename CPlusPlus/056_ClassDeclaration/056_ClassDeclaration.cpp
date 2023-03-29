@@ -18,7 +18,7 @@ public:
     int Att = 10;
     int Hp = 100;
 public:
-    // 이건 몬스터 가 있을거야.. 라는 뜻이 아니고
+    // 이건 몬스터 가 있을거야.. 라는 뜻이 아니고    
     // 몬스터를 알아야 한다.
     // void Att(Monster* _Monster);
 

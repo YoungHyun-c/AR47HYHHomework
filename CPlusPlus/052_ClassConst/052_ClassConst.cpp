@@ -6,6 +6,11 @@
 class Player
 {
 public:
+    static void GlobalFunction()
+    {
+
+    }
+
     void SetHp(int _Value)
     {
         Hp = _Value;

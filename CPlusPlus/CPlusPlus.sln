@@ -12,10 +12,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{01259C4E-E75D-4A6B-8E4F-C9F9D82C4B4D}"
 	ProjectSection(SolutionItems) = preProject
 		객체지향.txt = 객체지향.txt
+		구조Level의 의미.txt = 구조Level의 의미.txt
 		단축키.txt = 단축키.txt
 		메모리영역.txt = 메모리영역.txt
 		용어설명.txt = 용어설명.txt
 		컴파일과정.txt = 컴파일과정.txt
+		클래스디폴트.txt = 클래스디폴트.txt
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "005_Operator000", "005_Operator000\005_Operator000.vcxproj", "{0937EFD0-5E8E-4CB4-88FF-15A64ADE3B32}"
@@ -139,6 +141,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "055_Declaration", "055_Declaration\055_Declaration.vcxproj", "{50DA647A-2EDA-455A-A599-9E8D38C63CA1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "056_ClassDeclaration", "056_ClassDeclaration\056_ClassDeclaration.vcxproj", "{7C01F9D2-C4FC-412C-AC29-4627FD41E034}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "057_HeaderAndCpp", "057_HeaderAndCpp\057_HeaderAndCpp.vcxproj", "{587DE30C-831E-4086-A7C1-7FE11F4E1E75}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork0329", "HomeWork0329\HomeWork0329.vcxproj", "{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -644,6 +650,22 @@ Global
 		{7C01F9D2-C4FC-412C-AC29-4627FD41E034}.Release|x64.Build.0 = Release|x64
 		{7C01F9D2-C4FC-412C-AC29-4627FD41E034}.Release|x86.ActiveCfg = Release|Win32
 		{7C01F9D2-C4FC-412C-AC29-4627FD41E034}.Release|x86.Build.0 = Release|Win32
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Debug|x64.ActiveCfg = Debug|x64
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Debug|x64.Build.0 = Debug|x64
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Debug|x86.ActiveCfg = Debug|Win32
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Debug|x86.Build.0 = Debug|Win32
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Release|x64.ActiveCfg = Release|x64
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Release|x64.Build.0 = Release|x64
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Release|x86.ActiveCfg = Release|Win32
+		{587DE30C-831E-4086-A7C1-7FE11F4E1E75}.Release|x86.Build.0 = Release|Win32
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Debug|x64.ActiveCfg = Debug|x64
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Debug|x64.Build.0 = Debug|x64
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Debug|x86.ActiveCfg = Debug|Win32
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Debug|x86.Build.0 = Debug|Win32
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Release|x64.ActiveCfg = Release|x64
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Release|x64.Build.0 = Release|x64
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Release|x86.ActiveCfg = Release|Win32
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -655,6 +677,7 @@ Global
 		{1B188F67-16AF-4D99-9395-C6DC7C64B133} = {854A23DA-D231-48BA-8273-4EF498916007}
 		{8104EE23-24F9-4DA8-8E8D-ADA32A64F3F8} = {3859C5A6-3878-4F41-A4E6-7EEFC96ACD53}
 		{AAC692D5-7B58-4BC8-AD98-4B676432B0B7} = {854A23DA-D231-48BA-8273-4EF498916007}
+		{510FFBC9-E522-40E4-B5FD-0CCFF0BFBFFE} = {3859C5A6-3878-4F41-A4E6-7EEFC96ACD53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41449DEA-43D1-4862-BAA9-ECAE8B9E884D}
