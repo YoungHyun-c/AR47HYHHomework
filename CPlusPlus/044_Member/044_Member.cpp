@@ -19,6 +19,7 @@ void Test()
 class Player
 {
 public:
+    int Att;
     // 멤버 함수라고 부르고
     void Damage(int _Att)
     { 

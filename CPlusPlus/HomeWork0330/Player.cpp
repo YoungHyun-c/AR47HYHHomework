@@ -9,6 +9,7 @@ Player::Player()
 
 }
 // 화면바깥으로 못나가게 하세요. 
+
 void Player::Input()
 {
 	if (0 == _kbhit())
@@ -23,7 +24,7 @@ void Player::Input()
 	char Ch = _getch();
 
 	int2 NextPos = { 0, 0 };
-	
+
 	
 	switch (Ch)
 	{
@@ -65,9 +66,9 @@ void Player::Input()
 		break;
 	case 'f':
 	case 'F':
-		BulletPtr[0].SetPos(Pos);
-		BulletPtr[0].FireOn();
-		
+		BulletPtr[Count].SetPos(Pos);
+		BulletPtr[Count].FireOn();
+		Count++;
 		break;
 	default:
 		break;

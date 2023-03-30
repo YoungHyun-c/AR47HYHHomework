@@ -9,6 +9,9 @@ class Bullet
 public:
 	static const int ArrBulletCount = 10;
 
+	int BulletCount = 0;
+
+
 	static Bullet* GetArrBullet()
 	{
 		return ArrBullet;
@@ -50,4 +53,5 @@ private:
 	bool Fire = false;
 
 	int2 Pos = int2(0, 0);
+
 };

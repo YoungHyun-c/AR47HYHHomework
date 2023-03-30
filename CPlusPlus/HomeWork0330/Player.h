@@ -27,6 +27,7 @@ public:
 		BulletPtr = _BulletPtr;
 	}
 	
+
 	
 protected:
 
@@ -36,6 +37,9 @@ private:
 	int2 Pos = int2(0, 0);
 
 	Bullet* BulletPtr;
+
+	int Count = 0;
+
 
 	// 이런 구조를 Has a라고 한다. Player Has a Bullet
 	// Bullet NewBullet; // 플레이어의 신체 내부에 총알 한발이 있다.
