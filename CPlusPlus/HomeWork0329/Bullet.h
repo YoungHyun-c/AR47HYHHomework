@@ -1,33 +1,26 @@
 #pragma once
 #include "ConsoleGameMath.h"
 
-
+class ConsoleGameScreen;
 class Bullet
 {
 public:
 	Bullet();
 
-	void SetPos(const int2& _Pos)
+	inline void SetPos(const int2& _Value)
 	{
-		Pos = _Pos;
+		Pos = _Value;
 	}
 
-	int2 GetPos()
+	inline int2 GetPos() const
 	{
 		return Pos;
 	}
 
-	void Update()
-	{
-		Pos.Y -= 1;
-	}
-	
-	bool fire()
-	{
-		return true;
-	}
+	void Update();
+
+protected:
 
 private:
-	int2 Pos;
+	int2 Pos = int2(0, 0);
 };
-

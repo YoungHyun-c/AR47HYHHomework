@@ -7,3 +7,8 @@ Bullet::Bullet()
 {
 
 }
+
+void Bullet::Update()
+{
+	--Pos.Y;
+}

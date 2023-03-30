@@ -18,10 +18,25 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="ConsoleGameMath.cpp" />
+    <ClCompile Include="ConsoleGameScreen.cpp" />
+    <ClCompile Include="HomeWork0330.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ShootingGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="ConsoleGameMath.h" />
+    <ClInclude Include="ConsoleGameScreen.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="ShootingGame.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3031d0d5-2d18-4eba-bf29-e76fae0c91a3}</ProjectGuid>
+    <ProjectGuid>{042b58c7-2753-48d5-b27d-ed3554d9fb4e}</ProjectGuid>
     <RootNamespace>HomeWork0330</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -126,9 +141,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="HomeWork0330.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

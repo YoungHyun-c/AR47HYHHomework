@@ -2,8 +2,11 @@
 #include "ConsoleGameScreen.h"
 #include <conio.h>
 #include <Windows.h>
+#include "Bullet.h"
+
 Player::Player()
 {
+
 }
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
@@ -16,8 +19,12 @@ void Player::Input()
 		// continue; 반복문 내부에서만 사용가능
 		return;
 	}
+
 	char Ch = _getch();
+
 	int2 NextPos = { 0, 0 };
+	
+	
 	switch (Ch)
 	{
 	case 'a':
@@ -58,11 +65,19 @@ void Player::Input()
 		break;
 	case 'f':
 	case 'F':
-		Fire = true;
+		BulletPtr[0].SetPos(Pos);
+		BulletPtr[0].FireOn();
+		
 		break;
 	default:
 		break;
 	}
 
 	Sleep(InterFrame);
+}
+
+
+void Player::Render()
+{
+	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '*');
 }
