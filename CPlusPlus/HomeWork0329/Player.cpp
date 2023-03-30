@@ -64,7 +64,7 @@ void Player::Input()
 		break;
 	case 'f':
 	case 'F':
-
+		true == Player::IsFire();
 		break;
 	default:
 		break;

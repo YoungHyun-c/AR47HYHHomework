@@ -28,6 +28,7 @@
 
 int main()
 {
+
 	// 오늘의 숙제입니다.
 	// 총알 1발을 발사하세요.
 	// 방향 상관 없음.
@@ -52,11 +53,14 @@ int main()
 
 		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewPlayer.GetPos(), '*');
 
-		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewBullet.GetPos(), '@');
-
+		if (true == NewPlayer.IsFire())
+		{
+			ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewBullet.GetPos(), '@');
+		}
 		ConsoleGameScreen::GetMainScreen().ScreenPrint();
 
-		NewBullet.Update();
+		//NewBullet.Update();
+
 		NewPlayer.Input();
 
 	}

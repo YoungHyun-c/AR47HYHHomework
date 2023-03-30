@@ -66,6 +66,7 @@ void ConsoleGameScreen::SetScreenCharacter(const int2& _Pos, char _Ch)
 
 ConsoleGameScreen::ConsoleGameScreen()
 {
+
 }
 
 int2 ConsoleGameScreen::GetScreenSize()
