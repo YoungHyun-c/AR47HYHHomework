@@ -69,6 +69,12 @@ void Player::Input()
 		BulletPtr[Count].SetPos(Pos);
 		BulletPtr[Count].FireOn();
 		Count++;
+		BulletPtr[Count].SetPos({ Pos.X+1,Pos.Y });
+		BulletPtr[Count].FireOn();
+		Count++;
+		BulletPtr[Count].SetPos({ Pos.X-1,Pos.Y});
+		BulletPtr[Count].FireOn();
+		Count++;
 		break;
 	default:
 		break;

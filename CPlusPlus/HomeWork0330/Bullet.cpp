@@ -53,4 +53,5 @@ void Bullet::Update()
 	{
 		--Pos.Y;
 	}
+
 }
