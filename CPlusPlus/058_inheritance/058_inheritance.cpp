@@ -17,20 +17,106 @@
 // 포션은 아이템이다.
 // 갑옷은 아이템이다.
 
-class Item
+class Player
 {
 
+};
+
+// 기본 클래스를 만든다.
+class Item
+{
+public:
+                //	  내부코드	자식코드		외부
+public:			//      공개		 공개		공개
+protected:		//      공개		 공개		비공개
+private:		//      공개		 비공개		비공개
+
+public:
+    int Gold = 0;
+
+protected:
+    void Buy()
+    {
+
+    }
+
+private:
+    void Sell()
+    {
+    }
 };
 
 // : public Item 상속을 의미하는 문법
 // 상속관계가 된다.
 class Weapon : public Item
 {
+//public: 비교 public
+//    int Gold = 0;
+//protected: 비교 public
+//    void Buy() {
+//
+//}
+//private: 비교 public
+//    void Sell()
+//    {
+//    }
 
+public:
+    Weapon()
+    {
+        // private라 불러올 수 없음.
+        //Sell();
+        Buy();
+
+        // 자식코드
+        Gold = 20;
+    }
+
+};
+
+// 나는 아이템을 상속받겠다.
+class Potion : protected Item
+{
+//protected: 비교 했을때 좁은 접근제한자가 살아 남는다. 단 private는 내부에서만 가능하다.
+//    int Gold = 0;
+//protected: 비교 protected
+//    void Buy()
+//    {
+//    }
+};
+
+class Armor : private Item
+{
+//private: 비교 public
+//    int Gold = 0;
+//
+//priavte: 비교 public
+//void Buy() {
+//
+//}
+public:
+    Armor()
+    {
+        Buy();
+    }
+};
+
+class Shose : public Armor
+{
+public:
+    void Test()
+    {
+        //Gold();
+    }
 };
 
 int main()
 {
-    
+    Weapon NewWeapon;
+    Potion NewPotion;
+    Armor NewArmor;
+
+    NewWeapon.Gold = 20;
+    //NewPotion.Gold = 20;
 }
 

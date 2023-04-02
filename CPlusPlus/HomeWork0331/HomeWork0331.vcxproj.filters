@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ConsoleGameMath.cpp">
+      <Filter>Level0</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleGameObject.cpp">
+      <Filter>Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleGameScreen.cpp">
+      <Filter>Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingGame.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeWork0331.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Level0">
+      <UniqueIdentifier>{fd9d9863-7911-43ac-beb2-bb99e6b6b39e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level1">
+      <UniqueIdentifier>{ad748a39-e2b7-4d2b-bc7b-bccc6f16ad54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level2">
+      <UniqueIdentifier>{efb1932f-595c-4d49-8439-7f4dde555298}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConsoleGameMath.h">
+      <Filter>Level0</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGameObject.h">
+      <Filter>Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGameScreen.h">
+      <Filter>Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingGame.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
