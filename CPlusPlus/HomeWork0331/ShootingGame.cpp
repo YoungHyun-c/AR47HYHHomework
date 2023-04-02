@@ -10,7 +10,7 @@
 
 Player ShootingGame::NewPlayer;
 Monster ShootingGame::ArrMonster[ShootingGame::ArrMonsterCount];
-int a = 2;
+int WindowY = 1;
 void ShootingGame::Loading()
 {
 	// 게임이 시작하기 전에 준비한다
@@ -77,33 +77,36 @@ void ShootingGame::MonsterEndCheck()
 
 	// 3. 방향을 바꾼다.
 	// 4. 내려도 본다.
-	if (a % 2 == 0)
+
+	// 왼쪽으로 넘어갔을때 Y 좌표는 홀수, X는 0부터 몬스터 갯수만큼 좌표를 지정한다.
+	if (WindowY % 2 == 1)
 	{
 		for (int i = 0; i < ArrMonsterCount; i++)
 		{
 			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
 			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
 			{
+				WindowY++;
 				for (int j = 0; j < ArrMonsterCount; j++)
 				{
-					ArrMonster[j].SetPos({ j - 1 , a });
+					ArrMonster[j].SetPos({ j - 1 , WindowY });
 				}
-				a++;
 			}
 		}
 	}
-	else if (a % 2 == 1)
+	// 오른쪽으로 넘어갔을때 Y 좌표는 짝수로, X는 0부터 몬스터 갯수만큼 좌표를 지정한다.
+	else if (WindowY % 2 == 0)
 	{
 		for (int i = 0; i < ArrMonsterCount; i++)
 		{
 			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
 			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
 			{
+				WindowY++;
 				for (int j = 0; j < ArrMonsterCount; j++)
 				{
-					ArrMonster[j].SetPos({ j + 6 , a });
+					ArrMonster[j].SetPos({ j + 6 , WindowY });
 				}
-				a++;
 			}
 		}
 	}
