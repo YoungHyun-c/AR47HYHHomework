@@ -77,7 +77,7 @@ void Player::ShotUpdate()
 	Bullet& NewBullet = BulletPtr[BulletCount];
 	NewBullet.SetPos(Pos);
 	NewBullet.On();
-
+	
 	++BulletCount;
 	if (BulletCount >= Bullet::ArrBulletCount)
 	{

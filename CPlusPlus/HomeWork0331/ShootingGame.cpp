@@ -1,8 +1,7 @@
-#include "ShootingGame.h"
-
 #include <iostream>
 
 // 내가 만든건""
+#include "ShootingGame.h"
 #include "Player.h"
 #include "Bullet.h"
 #include "Monster.h"
@@ -10,7 +9,7 @@
 
 Player ShootingGame::NewPlayer;
 Monster ShootingGame::ArrMonster[ShootingGame::ArrMonsterCount];
-int WindowY = 1;
+
 void ShootingGame::Loading()
 {
 	// 게임이 시작하기 전에 준비한다
@@ -63,6 +62,7 @@ void ShootingGame::Collision()
 	}
 }
 
+int WindowY = 1;
 void ShootingGame::MonsterEndCheck()
 {
 	// 1. 움직이게 한다.
@@ -78,7 +78,7 @@ void ShootingGame::MonsterEndCheck()
 	// 3. 방향을 바꾼다.
 	// 4. 내려도 본다.
 
-	// 왼쪽으로 넘어갔을때 Y 좌표는 홀수, X는 0부터 몬스터 갯수만큼 좌표를 지정한다.
+	// 왼쪽으로 넘어갔을때 Y 좌표는 홀수, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
 	if (WindowY % 2 == 1)
 	{
 		for (int i = 0; i < ArrMonsterCount; i++)
@@ -87,25 +87,25 @@ void ShootingGame::MonsterEndCheck()
 			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
 			{
 				WindowY++;
-				for (int j = 0; j < ArrMonsterCount; j++)
+				for (i ; i < ArrMonsterCount; i++)
 				{
-					ArrMonster[j].SetPos({ j - 1 , WindowY });
+					ArrMonster[i].SetPos({ i - 1 , WindowY });
 				}
 			}
 		}
 	}
-	// 오른쪽으로 넘어갔을때 Y 좌표는 짝수로, X는 0부터 몬스터 갯수만큼 좌표를 지정한다.
+	// 오른쪽으로 넘어갔을때 Y 좌표는 짝수로, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
 	else if (WindowY % 2 == 0)
 	{
-		for (int i = 0; i < ArrMonsterCount; i++)
+		for (int i = ArrMonsterCount-1; i > -1 ; i--)
 		{
 			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
 			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
 			{
 				WindowY++;
-				for (int j = 0; j < ArrMonsterCount; j++)
+				for (i-1 ; i > -1; i--)
 				{
-					ArrMonster[j].SetPos({ j + 6 , WindowY });
+					ArrMonster[i].SetPos({ i+6 , WindowY });
 				}
 			}
 		}
