@@ -113,6 +113,12 @@ void ShootingGame::MonsterEndCheck()
 
 }
 
+//// ¼±»ý´Ô
+//void ShootingGame::MonsgerEndCheck()
+//{
+//
+//}
+
 void ShootingGame::GameUpdate()
 {
 	while (true)
