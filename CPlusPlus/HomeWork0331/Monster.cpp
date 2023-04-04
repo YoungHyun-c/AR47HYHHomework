@@ -34,6 +34,6 @@ void Monster::Update()
 		return;
 	}
 	
-	Pos.X += Dir;
+	//Pos.X += Dir;
 	
 }
