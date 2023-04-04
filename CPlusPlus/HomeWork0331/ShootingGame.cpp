@@ -62,62 +62,83 @@ void ShootingGame::Collision()
 	}
 }
 
-int WindowY = 1;
-void ShootingGame::MonsterEndCheck()
-{
-	// 1. 움직이게 한다.
-		
-	// 2. 끝에 어떠한 몬스터중 단 1개라도 닿았는지 확인한다.
-	// 2-1. 왼쪽 끝을 체크한다.
-	// 2-2. 오른쪽 끝에 닿은걸 체크한다.
-	//if(몬스터가 왼쪽 끝에 닿았다)
-	//{
-	//		int a = 0;
-	//}
-
-	// 3. 방향을 바꾼다.
-	// 4. 내려도 본다.
-
-	// 왼쪽으로 넘어갔을때 Y 좌표는 홀수, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
-	if (WindowY % 2 == 1)
-	{
-		for (int i = 0; i < ArrMonsterCount; i++)
-		{
-			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
-			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
-			{
-				WindowY++;
-				for (i ; i < ArrMonsterCount; i++)
-				{
-					ArrMonster[i].SetPos({ i - 1 , WindowY });
-				}
-			}
-		}
-	}
-	// 오른쪽으로 넘어갔을때 Y 좌표는 짝수로, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
-	else if (WindowY % 2 == 0)
-	{
-		for (int i = ArrMonsterCount-1; i > -1 ; i--)
-		{
-			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
-			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
-			{
-				WindowY++;
-				for (i-1 ; i > -1; i--)
-				{
-					ArrMonster[i].SetPos({ i+6 , WindowY });
-				}
-			}
-		}
-	}
-
-}
-
-//// 선생님
-//void ShootingGame::MonsgerEndCheck()
+// 내 풀이
+//int WindowY = 1;
+//void ShootingGame::MonsterEndCheck()
 //{
+//	// 1. 움직이게 한다.
+//		
+//	// 2. 끝에 어떠한 몬스터중 단 1개라도 닿았는지 확인한다.
+//	// 2-1. 왼쪽 끝을 체크한다.
+//	// 2-2. 오른쪽 끝에 닿은걸 체크한다.
+//	//if(몬스터가 왼쪽 끝에 닿았다)
+//	//{
+//	//		int a = 0;
+//	//}
+//
+//	// 3. 방향을 바꾼다.
+//	// 4. 내려도 본다.
+//
+//	// 왼쪽으로 넘어갔을때 Y 좌표는 홀수, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
+//	if (WindowY % 2 == 1)
+//	{
+//		for (int i = 0; i < ArrMonsterCount; i++)
+//		{
+//			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
+//			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
+//			{
+//				WindowY++;
+//				for (i ; i < ArrMonsterCount; i++)
+//				{
+//					ArrMonster[i].SetPos({ i - 1 , WindowY });
+//				}
+//			}
+//		}
+//	}
+//	// 오른쪽으로 넘어갔을때 Y 좌표는 짝수로, X는 넘은 몬스터 부터 남은 몬스터 갯수만큼 좌표를 지정한다.
+//	else if (WindowY % 2 == 0)
+//	{
+//		for (int i = ArrMonsterCount-1; i > -1 ; i--)
+//		{
+//			//if (ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos() < )
+//			if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(ArrMonster[i].GetPos()))
+//			{
+//				WindowY++;
+//				for (i-1 ; i > -1; i--)
+//				{
+//					ArrMonster[i].SetPos({ i+6 , WindowY });
+//				}
+//			}
+//		}
+//	}
 //
 //}
+
+// 선생님
+void ShootingGame::MonsterEndCheck()
+{
+	bool Check = false;
+	for (size_t i = 0; i < ArrMonsterCount; i++)
+	{
+		int2 NextPos = ArrMonster[i].GetNextPos();
+
+		if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		{
+			Check = true;
+			break;
+		}
+	}
+
+	if (false == Check)
+	{
+		return;
+	}
+
+	for (size_t i = 0; i < ArrMonsterCount; i++)
+	{
+		ArrMonster[i].Down();
+	}
+}
 
 void ShootingGame::GameUpdate()
 {
@@ -135,7 +156,7 @@ void ShootingGame::GameUpdate()
 			ArrMonster[i].Render();
 		}
 		
-		//MonsterEndCheck();
+		MonsterEndCheck();
 		Collision();
 
 		ConsoleGameScreen::GetMainScreen().ScreenPrint();
