@@ -19,11 +19,13 @@ public:
 		DownCheck = true;
 	}
 
-
+	void Render() override;
 
 	// 이것을 사용해서 몬스터가 움직이게
 private:
 	int Dir = 1;
 	bool DownCheck = false;
+
+	int DeathTime = 4;
 
 };

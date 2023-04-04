@@ -8,10 +8,69 @@
 // void(*__vfptr[???]))() <= 가상함수 테이블이라고 합니다.
 //
 // 함수포인터의 배열을 만들어내고 그걸 함수포인터의 포인터로 저장합니다.
-// void(** __vfptr[]))()
+// void(** __vfptr)()
 
+
+class FightUnit
+{
+public:
+	virtual void Damage()
+	{
+
+	}
+
+	virtual void FightStatusRender()
+	{
+
+	}
+	
+public:
+	FightUnit()
+		// [0]FightUnit::Damage
+		// [1]FightUnit::FightStatusRender
+	{
+		this;
+		int a = 0;
+	}
+};
+
+class Player : public FightUnit
+{
+public:
+	void Damage() override
+	{
+
+	}
+
+	/*void FightStatusRender() override
+	{
+
+	}*/
+
+
+public:
+	Player()
+		// [0]FightUnit::Damage
+		// [1]FightUnit::FightStatusRender
+	{
+		this;
+		int a = 0;
+	}
+};
+
+class Fighter : public Player
+{
+	// public:
+	// Fighter() {
+	// [0]FightUnit::Damage
+	// [1]FightUnit::FightStatusRender
+	//
+};
 
 int main()
 {
-    
+	int Value = sizeof(Player);
+
+	Player NewPlayer;
+
 }

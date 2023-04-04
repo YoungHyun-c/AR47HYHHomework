@@ -61,6 +61,53 @@ public:
 int main()
 {
     {
+
+        // void (*)();
+
+        void(*Ptr)();
+
+        //void PlayerAttack()
+        // PlayerAttack 주소값을 의미하게 되니까.
+        // 둘의 자료형은 완전히 동일하다
+        // void(*)() = void PlayerAttack();
+        //    int    =   10;
+
+        // 모든 자료형은 배열로 사용할 수 있습니다.
+        // int[] => int Arr[10]
+        // void(*[])() = void(*ArrFunction[10])()
+
+        // int Arr[10] = int* Ptr = Arr
+        // 단순히 이렇게 안될수도 있습니다.
+        // int Arr[10] = int** Ptr = Arr
+        // void(*ArrFunctions[10])() = void(**FunctionsPtr)() = ArrFunctions
+
+        {
+            int* Arr[10];
+            int** Ptr = Arr;
+        }
+
+        {
+            void(*ArrFunctions[10])();
+            void(**FunctionsPtr)() = ArrFunctions;
+        }
+
+        {
+            int***** Arr[10];
+            int****** Ptr = Arr;
+        }
+
+        // ptr = 특정한 함수의 이름을 넣어줌으로
+        // ptr 이 변수가 그 함수를 호출할 수 있게 된다.
+
+        int* intPtr;
+        int* intPtrArr[10];
+
+        // int
+        intPtrArr[0];
+
+        int intArr[10];
+
+    {
         UIButton PlayerAttackButton;
         UIButton PlayerMoveButton;
         PlayerAttackButton.Ptr = PlayerAttack;

@@ -13,6 +13,7 @@ int main()
 {
     // 힙은 자동으로 안지워진다.
     // 남아 있는 메모리 확인하는 방법
+    // 외워야 되는 것.
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
     Monster* PtrMonster = new Monster();
@@ -30,13 +31,15 @@ int main()
 
     // 힙은 가장 자유롭게 메모리를 할당할 수 있는 영역입니다.
 
+    int Value = 20;
+
     // 받지 않으면 힙에 만들어진 메모리를 잃어버리므로
     // 무조건 받아야한다.
     // int* Ptr = new int();
     // new int(); // 이걸 잃어버린 힙. 사용할 방법이 없음. 이런건 사용하면 안된다.
 
     // 무조건 받아야한다.
-    int* Ptr = new int(); // => int* Ptr = operator new() new int();
+    int* Ptr = new int(); // => int* Ptr = /*operator new()*/new int();
 
     *Ptr = 20;
 

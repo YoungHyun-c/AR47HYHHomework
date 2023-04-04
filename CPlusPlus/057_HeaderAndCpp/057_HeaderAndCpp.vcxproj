@@ -128,6 +128,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="057_HeaderAndCpp.cpp" />
+    <ClCompile Include="Monster.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Monster.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
