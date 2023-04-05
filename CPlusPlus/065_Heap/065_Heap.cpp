@@ -16,6 +16,8 @@ int main()
     // 외워야 되는 것.
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
+
+    // new 한번이라도 쓰면 delete 하는 습관을 가져야 된다.
     Monster* PtrMonster = new Monster();
 
     while (true)
