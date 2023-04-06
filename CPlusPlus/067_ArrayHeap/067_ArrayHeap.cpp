@@ -5,12 +5,15 @@
 
 int main()
 {
+    // 외워야 될것.
+    // 윈도우 전용 삭제하지 않은 힙 메모리 출력에 표시
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
     // 정적 바인딩
     // 개수가 정해져있고 코드가 실행되면 바뀌지 않는 메모리 영역들을 말한다.
     {
         int Arr[10];
         int* Ptr = Arr;
-
         Ptr[0];
     }
 
