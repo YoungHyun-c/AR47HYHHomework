@@ -69,7 +69,7 @@ int main()
 
         // 숙제4 완전히 동일한 배열이 되게 만들어주세요.
         // Array1 10개 짜리 배열이 되고 0 1 2 3 4 5 6 7 8 9
-        //Array1 = Array0;
+        Array1 = Array0;
 
         for (size_t i = 0; i < Array1.Count(); i++)
         {

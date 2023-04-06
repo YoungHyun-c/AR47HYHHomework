@@ -30,10 +30,18 @@ public:
 
 	GameEngineArray& operator=(const GameEngineArray& _Other)
 	{
-		ArrCount = _Other.ArrCount;
+		temp = new DataType[_Other.ArrCount];
 		for (size_t i = 0; i < _Other.ArrCount; i++)
 		{
-			ArrPtr[i] = ArrPtr[i];
+			temp[i] = _Other.ArrPtr[i];
+		}
+
+		ArrCount = _Other.ArrCount;
+		ArrPtr = temp;
+
+		for (size_t i = 0; i < ArrCount; i++)
+		{
+			ArrPtr[i] = temp[i];
 		}
 		return *this;
 	}
