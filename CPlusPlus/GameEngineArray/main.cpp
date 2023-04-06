@@ -40,9 +40,10 @@ int main()
 
         // Array0.ReSize(15);
 
+        //printf_s("1번 숙제 ReSize\n");
         for (size_t i = 0; i < Array0.Count(); i++)
         {
-            //printf_s("%d\n", Array0[i]);
+            printf_s("%d\n", Array0[i]);
         }
 
         //GameEngineArray Array1;
@@ -71,6 +72,7 @@ int main()
         // Array1 10개 짜리 배열이 되고 0 1 2 3 4 5 6 7 8 9
         Array1 = Array0;
 
+        printf_s("4번 숙제 '='\n");
         for (size_t i = 0; i < Array1.Count(); i++)
         {
             printf_s("%d\n", Array1[i]);
