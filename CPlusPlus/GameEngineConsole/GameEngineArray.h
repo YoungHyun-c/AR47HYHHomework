@@ -1,7 +1,5 @@
 #pragma once
 #include <GameEngineBase/GameEngineDebug.h>
-//#include "../GameEngineBase/GameEngineDebug.h" 속성, 모든구성, 모든 플랫폼
-//포함 디렉터리 $(VC_IncludePath);$(WindowsSDK_IncludePath);      ..\;  <= 이거 붙이면 상위 폴더
 
 typedef int DataType;
 

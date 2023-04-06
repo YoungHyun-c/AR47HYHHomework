@@ -10,6 +10,9 @@ int main()
     // 윈도우 전용 삭제하지 않은 힙 메모리 출력에 표시.
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
+    GameEngineArray NewArr(0);
+
+
     {
         // 면접에서 가장 많이 물어보는것 동적 배열, 자료구조
         
