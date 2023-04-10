@@ -1,16 +1,19 @@
 #pragma once
 #include <GameEngineBase/GameEngineDebug.h>
 
-typedef int DataType;
-
-// 설명 :
+//typedef int DataType;
+template<typename DataType>
 class GameEngineArray
 {
 public:
 	// delete Function
-	GameEngineArray(const GameEngineArray& _Other) = delete;
+	//GameEngineArray(const GameEngineArray& _Other) = delete;
 	GameEngineArray(GameEngineArray&& _Other) noexcept = delete;
 	GameEngineArray& operator=(const GameEngineArray&& _Other) = delete;
+
+	GameEngineArray()
+	{
+	}
 
 	// constrcuter destructer
 	GameEngineArray(size_t _Value)
@@ -78,7 +81,7 @@ public:
 		return ArrPtr[_Index];
 	}
 
-	void ReSize(int _Value)
+	void ReSize(size_t _Value)
 	{
 		// 20줄 안팍.
 		// 삼항 연산자 써보시면 좋을겁니다.
@@ -119,7 +122,7 @@ public:
 
 		// 선생님 풀이
 		DataType* NewPtr = new DataType[_Value];
-		int CopySize = _Value < ArrCount ? _Value : ArrCount;
+		size_t CopySize = _Value < ArrCount ? _Value : ArrCount;
 
 		for (size_t i = 0; i < CopySize; i++)
 		{
@@ -139,8 +142,8 @@ public:
 protected:
 
 private:
-	size_t ArrCount;
+	size_t ArrCount = 0;
 	DataType* ArrPtr = nullptr;
-	DataType* temp = nullptr;
+	//DataType* temp = nullptr; 내풀이
 };
 

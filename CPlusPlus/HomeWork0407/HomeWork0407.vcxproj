@@ -139,7 +139,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bomb.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ConsoleObjectManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GameEnum.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="HomeWork0407.cpp" />
+    <ClCompile Include="Player.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameEngineBase\GameEngineBase.vcxproj">
@@ -148,6 +164,24 @@
     <ProjectReference Include="..\GameEngineConsole\GameEngineConsole.vcxproj">
       <Project>{10b713b6-7bef-455d-9877-3a601ec910a8}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bomb.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ConsoleObjectManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GameEnum.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

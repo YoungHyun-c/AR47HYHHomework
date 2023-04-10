@@ -8,15 +8,22 @@
 // 2 궁수
 // 3 성기사
 
+// 컴파일 되면 이녀석은 int로 변형되게 됩니다.
+//enum GameJobType
+//{
+//    Fighter,    // = 0
+//    Mage,       // = 1
+//    Archer,     // = 2
+//    paladin     // = 3
+//};
+
 // 좀더 형을 따진다.
-// 암시적 형변환이 다 막혔어요.
-// 이녀석은 그냥 int가 될 수 없어요.
-enum GameJobType
+enum class GameJobType
 {
-    Fighter,    // = 0
-    Mage,       // = 1
-    Archer,     // = 2
-    paladin     // = 3
+    Fighter = 5,   // = 5
+    Mage,       // = 6
+    Archer,     // = 7
+    paladin     // = 8
 
     // test1 = 5 지정할 수 도 있고,
     // test2   그 다음에 있는 것은 6이 됨.
@@ -25,8 +32,9 @@ enum GameJobType
 class FightUnit
 {
     // 직업이 어떤건지 알고 싶어서
-    int JobType;
+    GameJobType JobType;
 
+public:
     void SetJobType(GameJobType _Type)
     {
         JobType = _Type;
@@ -36,8 +44,14 @@ class FightUnit
 
 int main()
 {
+    // 직업이라는게 있다고 쳤을 때.
     FightUnit NewUnit;
 
+    // 명시적인것을 더 좋아해서 그렇다.
     NewUnit.SetJobType(GameJobType::Archer);
+
+    int value = (int)GameJobType::Archer;
+
+    int a = 0;
 }
 

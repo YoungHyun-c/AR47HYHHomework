@@ -1,5 +1,6 @@
 #pragma once
 #include "ConsoleGameMath.h"
+#include "GameEngineArray.h"
 
 
 class ConsoleGameScreen
@@ -19,7 +20,7 @@ public:
 		return MainScreen.GetScreenSize();
 	}*/
 
-	static int2 GetScreenSize();
+	int2 GetScreenSize();
 
 	void SetScreenSize(int2 _Size);
 
