@@ -32,6 +32,8 @@ public:
 
 	void SetScreenCharacter(const int2& _Pos, char _Ch);
 
+	void SetScreenBomb(const int2& _Pos, char _Ch);
+
 protected:
 
 private:

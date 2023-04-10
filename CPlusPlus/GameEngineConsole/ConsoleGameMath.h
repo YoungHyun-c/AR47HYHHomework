@@ -12,6 +12,23 @@ public:
 	{
 		return { X / 2, Y / 2 };
 	}
+	
+	inline int2 E(int _Value)
+	{
+		return { X + _Value, Y };
+	}
+	inline int2 W(int _Value)
+	{
+		return { X - _Value, Y };
+	}
+	inline int2 S(int _Value)
+	{
+		return { X , Y + _Value };
+	}
+	inline int2 N(int _Value)
+	{
+		return { X , Y - _Value };
+	}
 
 	bool Check(const int2& _Other)
 	{

@@ -1,7 +1,6 @@
 #pragma once
 #include <GameEngineConsole/ConsoleGameObject.h>
 
-
 class ConsoleGameScreen;
 class Bomb : public ConsoleGameObject
 {
@@ -24,5 +23,6 @@ protected:
 
 private:
 	int BombCount = 10;
+	int BombMax = 1;
 };
 
