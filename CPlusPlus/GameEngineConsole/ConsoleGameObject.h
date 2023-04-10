@@ -40,8 +40,9 @@ public:
 		UpdateValue = false;
 	}
 
+	virtual void Update();
 	virtual void Render();
-
+	
 protected:
 	int2 Pos;
 	char RenderChar = ' ';

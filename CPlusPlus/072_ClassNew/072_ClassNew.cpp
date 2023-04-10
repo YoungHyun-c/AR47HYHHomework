@@ -3,8 +3,29 @@
 
 #include <iostream>
 
+class Test
+{
+	char* ArrChar;
+public:
+	void Resize(size_t Size)
+	{
+		ArrChar = new char[Size];
+	}
+};
+
+
 int main()
 {
-    
-}
+	char* Arrint = new char();
 
+	delete Arrint;
+
+	// 이녀석을 만드는 것 자체가
+	// char의 배열을 만드는것과 같다는 것.
+	Test* ArrTest = new Test[10];
+
+	delete[] ArrTest;
+
+	// Test ArrTest = Test();
+
+}
