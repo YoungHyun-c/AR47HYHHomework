@@ -38,7 +38,7 @@ public:
 	// 선생님은 굉장히 싫어하기 때문에 붙여줄 것이다.
 	int GetAtt() override
 	{
-		return FigthUnit::GetAtt() + Lv;
+		return FightUnit::GetAtt() + Lv;
 	}
 
 private:
@@ -77,7 +77,7 @@ int main()
 	{
 		// 부모형을 자식형으로 바꾼다. => 위험성이 있다.
 		// 강제 캐스팅이고 내가 쳐줘야 한다.
-		FigthUnit* Ptr;
+		FightUnit* Ptr;
 
 		// 다운캐스팅을 꼭 해야하는 경우를 본적이 없습니다.
 		// 그래서 위험하다는 겁니다.

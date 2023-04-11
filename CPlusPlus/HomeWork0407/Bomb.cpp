@@ -1,7 +1,6 @@
 #include "Bomb.h"
 #include <GameEngineConsole/ConsoleGameScreen.h>
 #include "ConsoleObjectManager.h"
-#include "GameEnum.h"
 
 Bomb::Bomb()
 {
