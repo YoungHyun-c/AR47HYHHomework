@@ -15,10 +15,6 @@ public:
 		return Pos;
 	}
 
-	inline int2 BombE(const int2& _Value)
-	{
-		PosE = _Value;
-	}
 
 	bool IsDeath()
 	{
@@ -51,7 +47,7 @@ public:
 protected:
 	int2 Pos;
 
-	int2 PosE;
+	//int2 PosE;
 
 	char RenderChar = ' ';
 

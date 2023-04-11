@@ -15,14 +15,23 @@ public:
 	Bomb& operator = (const Bomb& _Other) = delete;
 	Bomb& operator = (Bomb&& _Other) noexcept = delete;
 
-	void Init();
+	void Init(int _BombPower);
 
 protected:
 	void Update() override;
 	void Render() override;
 
 private:
-	int BombCount = 10;
-	int BombMax = 1;
+	int BoomCount = 10;
+	int MaxExpPower = 5;
+	int CurExpPower = 0;
+
 };
+
+
+// ≥ª«Æ¿Ã
+//private:
+//	int BombCount = 10;
+//	int BombMax = 1;
+//};
 

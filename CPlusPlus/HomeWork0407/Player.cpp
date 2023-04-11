@@ -14,6 +14,28 @@ Player::Player()
 	SetPos(ConsoleGameScreen::GetMainScreen().GetScreenSize().Half());
 }
 
+bool Player::IsBomb(int2 _NextPos)
+{
+	// 폭탄이 설치되었다면 못통과하게 만들어놓으세요.
+	GameEngineArray<ConsoleGameObject*>& BombGroup
+		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
+
+	for (int i = 0; i < BombGroup.Count(); i++)
+	{
+		if (nullptr == BombGroup[i])
+		{
+			continue;
+		}
+
+		if (_NextPos.Check(BombGroup[i]->GetPos()))
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
 void Player::Update()
 {
 	if (0 == _kbhit())
@@ -31,7 +53,7 @@ void Player::Update()
 	case 'A':
 		NextPos = Pos;
 		NextPos.X -= 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos) && false == IsBomb(NextPos))
 		{
 			Pos.X -= 1;
 		}
@@ -40,7 +62,7 @@ void Player::Update()
 	case 'D':
 		NextPos = Pos;
 		NextPos.X += 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos) && false == IsBomb(NextPos))
 		{
 			Pos.X += 1;
 		}
@@ -49,7 +71,7 @@ void Player::Update()
 	case 'W':
 		NextPos = Pos;
 		NextPos.Y -= 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos) && false == IsBomb(NextPos))
 		{
 			Pos.Y -= 1;
 		}
@@ -58,7 +80,7 @@ void Player::Update()
 	case 'S':
 		NextPos = Pos;
 		NextPos.Y += 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos) && false == IsBomb(NextPos))
 		{
 			Pos.Y += 1;
 		}
@@ -66,10 +88,15 @@ void Player::Update()
 	case 'f':
 	case 'F':
 	{
+		// 여기 이상황에서 보면
+		// ConsoleObjectManager 있고
+		// Player
 		// 폭탄설치
 		Bomb* NewBomb = ConsoleObjectManager::CreateConsoleObject<Bomb>(ObjectOrder::Bomb);
-		NewBomb->Init();
+		NewBomb->Init(BombPower);
 		NewBomb->SetPos(GetPos());
+
+		// delte NewBomb 진짜 하면 안되는짓. ObjectManager에서 관리(삭제)하는 것인데 플레이어에서 또 삭제하는짓
 		break;
 	}
 	case 'q':

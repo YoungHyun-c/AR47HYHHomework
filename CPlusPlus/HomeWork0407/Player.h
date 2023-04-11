@@ -11,9 +11,11 @@ public:
 	Player();
 	void Update() override;
 
+	bool IsBomb(int2 _NextPos);
+
 protected:
 
 private:
-
+	int BombPower = 5;
 };
 
