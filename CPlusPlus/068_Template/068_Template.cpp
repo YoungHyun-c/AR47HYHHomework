@@ -21,7 +21,6 @@ public:
 
 typedef Bullet DataType;
 
-// 설명:
 class GameEngineArray
 {
 public:
