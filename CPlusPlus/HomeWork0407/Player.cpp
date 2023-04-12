@@ -19,21 +19,41 @@ bool Player::IsBomb(int2 _NextPos)
 	// 폭탄이 설치되었다면 못통과하게 만들어놓으세요.
 	GameEngineArray<ConsoleGameObject*>& BombGroup
 		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
-
-	for (int i = 0; i < BombGroup.Count(); i++)
+	
+	// 선생님 풀이
+	for (size_t i = 0; i < BombGroup.Count(); i++)
 	{
-		if (nullptr == BombGroup[i])
+		ConsoleGameObject* Ptr = BombGroup[i];
+
+		if (nullptr == Ptr)
 		{
 			continue;
 		}
 
-		if (_NextPos.Check(BombGroup[i]->GetPos()))
+		int2 BombPos = BombGroup[i]->GetPos();
+		if (_NextPos == BombPos)
 		{
 			return true;
 		}
 	}
-	
+
 	return false;
+
+	// 내 풀이
+	//for (int i = 0; i < BombGroup.Count(); i++)
+	//{
+	//	if (nullptr == BombGroup[i])
+	//	{
+	//		continue;
+	//	}
+
+	//	if (_NextPos.Check(BombGroup[i]->GetPos()))
+	//	{
+	//		return true;
+	//	}
+	//}
+	//
+	//return false;
 }
 
 void Player::Update()

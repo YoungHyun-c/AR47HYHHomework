@@ -2,7 +2,10 @@
 //
 
 #include <iostream>
+// stl 자료구조 입니다.
 #include <vector>
+#include <GameEngineBase/GameEngineDebug.h>
+
 
 // vector는 배열을 대체합니다.
 // 조금 특징이 다릅니다.

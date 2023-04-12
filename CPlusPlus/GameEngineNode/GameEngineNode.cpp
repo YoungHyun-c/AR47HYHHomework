@@ -25,6 +25,34 @@
 // 하이데의 큰 불탑
 // 매듀라
 
+//Skill
+//{
+//	Skill*
+//	virtual void SkillEffect()
+//	{
+//
+//	}
+//}
+
+
+// 아래베기 : public Skill
+//{
+//	virtual void SkillEffect()
+//	{
+//	}
+//}
+
+
+// Skill* Skill1;
+// Skill* Skill2;
+// Skill* Skill3;
+// Skill* Skill4;
+// Skill* Skill5;
+// Skill* Skill6;
+// Skill* Skill7;
+
+//GameEngineArray<Skill*>
+
 class MapZone
 {
 public:
@@ -125,9 +153,11 @@ private:
 	DataType Value;
 };
 
-
-
-
+// 이 배열을 좀 더 효율적으로 관리하기 위한 클래스
+// 이 node를 좀 더 효율적으로 관리하기 위한 클래스
+// 언어에서 지원해줍니다.
+// 신뢰성이 있는 배열과 이 노드를 관리해준느 클래스를 만들었습니다.
+// std
 
 
 int main()
