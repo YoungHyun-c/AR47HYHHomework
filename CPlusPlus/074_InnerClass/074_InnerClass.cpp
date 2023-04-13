@@ -12,12 +12,33 @@ public:
     // Test::publicInner
     class publicInner
     {
+    public:
+        DataType InnerValue;
+
+    public:
+        publicInner()
+        {
+        }
+
+        void Function()
+        {
+            InnerValue = 20;
+        }
 
     };
+
+private:
+    class privateInner
+    {
+
+    };
+
+public:
+    int Value = 0;
 };
 
 int main()
 {
-    
+    Test<int>::publicInner Innter;
 }
 

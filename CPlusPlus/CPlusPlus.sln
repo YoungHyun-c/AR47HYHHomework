@@ -174,7 +174,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "067_ArrayHeap", "067_ArrayH
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStruct", "DataStruct", "{3C7F32A7-08A8-416E-A0B2-C8E45EA0C0F8}"
 	ProjectSection(SolutionItems) = preProject
-		Stl.txt = Stl.txt
 		자료구조.txt = 자료구조.txt
 	EndProjectSection
 EndProject
@@ -209,6 +208,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "074_InnerClass", "074_InnerClass\074_InnerClass.vcxproj", "{F50EB5AB-5216-42D0-8131-521BE688F34D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "075_Friend", "075_Friend\075_Friend.vcxproj", "{14E49F1A-121C-402A-B5AA-FBDB4899E909}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork0413", "HomeWork0413\HomeWork0413.vcxproj", "{282DDE8C-4A43-4E98-9DED-BC09809673EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -954,6 +955,14 @@ Global
 		{14E49F1A-121C-402A-B5AA-FBDB4899E909}.Release|x64.Build.0 = Release|x64
 		{14E49F1A-121C-402A-B5AA-FBDB4899E909}.Release|x86.ActiveCfg = Release|Win32
 		{14E49F1A-121C-402A-B5AA-FBDB4899E909}.Release|x86.Build.0 = Release|Win32
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Debug|x64.ActiveCfg = Debug|x64
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Debug|x64.Build.0 = Debug|x64
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Debug|x86.Build.0 = Debug|Win32
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Release|x64.ActiveCfg = Release|x64
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Release|x64.Build.0 = Release|x64
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Release|x86.ActiveCfg = Release|Win32
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -976,6 +985,7 @@ Global
 		{6DFEEA95-CFB9-4F7D-B184-F9AADCAA44B7} = {3C7F32A7-08A8-416E-A0B2-C8E45EA0C0F8}
 		{05D86291-4B22-48D4-B6E4-40BF26230E9C} = {3C7F32A7-08A8-416E-A0B2-C8E45EA0C0F8}
 		{E522CB85-A341-4D25-AE84-8B26C5BB6397} = {3C7F32A7-08A8-416E-A0B2-C8E45EA0C0F8}
+		{282DDE8C-4A43-4E98-9DED-BC09809673EA} = {3859C5A6-3878-4F41-A4E6-7EEFC96ACD53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41449DEA-43D1-4862-BAA9-ECAE8B9E884D}

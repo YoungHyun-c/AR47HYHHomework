@@ -12,8 +12,8 @@
 // 벡터 10개를 만들고도
 // [][][][][][][][][][]
 
-typedef int DataType;
-
+//typedef int DataType;
+template<typename DataType>
 class MyVector 
 {
 
@@ -96,7 +96,7 @@ int main()
 {
 
     {
-        MyVector Test;
+        MyVector<int> Test;
 
         Test.reserve(10);
 
