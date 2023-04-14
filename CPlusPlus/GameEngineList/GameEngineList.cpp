@@ -186,7 +186,7 @@ int main()
 
 		{
 			GameEngineList::iterator Delete = NewList.begin();
-			//++Delete;
+			++Delete;
 
 			NewList.erase(Delete);
 		}
