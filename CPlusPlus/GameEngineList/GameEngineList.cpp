@@ -154,12 +154,12 @@ public:
 		ListNode* NewListNode = new ListNode();
 		NewListNode->Value = _Data;
 		
-		ListNode* PrevNode = StartNode->Next;
+		ListNode* NextNode = StartNode->Next;
 
 		StartNode->Next = NewListNode;
-		NewListNode->Next = PrevNode;
+		NewListNode->Next = NextNode;
 
-		PrevNode->Prev = NewListNode;
+		NextNode->Prev = NewListNode;
 		NewListNode->Prev = StartNode;
 		
 	}
