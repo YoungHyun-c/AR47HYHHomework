@@ -6,11 +6,13 @@
     <ClCompile Include="ConsoleObjectManager.cpp" />
     <ClCompile Include="GameEnum.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="ConsoleObjectManager.h" />
     <ClInclude Include="GameEnum.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="item.h" />
   </ItemGroup>
 </Project>

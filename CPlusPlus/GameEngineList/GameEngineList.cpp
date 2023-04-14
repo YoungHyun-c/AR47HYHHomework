@@ -94,6 +94,7 @@ public:
 	{
 		if (nullptr != StartNode)
 		{
+			// 재귀 방식.
 			delete StartNode;
 			StartNode = nullptr;
 		}
