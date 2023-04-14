@@ -5,6 +5,7 @@
 #include "ConsoleObjectManager.h"
 #include "Bomb.h"
 #include "GameEnum.h"
+#include "ConsoleObjectManager.h"
 
 bool Player::IsGameUpdate = true;
 
@@ -17,20 +18,23 @@ Player::Player()
 bool Player::IsBomb(int2 _NextPos)
 {
 	// 폭탄이 설치되었다면 못통과하게 만들어놓으세요.
-	GameEngineArray<ConsoleGameObject*>& BombGroup
+	std::list<ConsoleGameObject*>& BombGroup
 		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
 	
-	// 선생님 풀이
-	for (size_t i = 0; i < BombGroup.Count(); i++)
+	// Ranged for 라는 문법이다.
+	// 절대절대 내부에서 구조나 개수가 바뀌는 행동을 하면 안된다.
+	// push_back
+	// push_front
+	// erase
+	for (ConsoleGameObject* Ptr : BombGroup)
 	{
-		ConsoleGameObject* Ptr = BombGroup[i];
-
+		
 		if (nullptr == Ptr)
 		{
 			continue;
 		}
 
-		int2 BombPos = BombGroup[i]->GetPos();
+		int2 BombPos = Ptr->GetPos();
 		if (_NextPos == BombPos)
 		{
 			return true;
