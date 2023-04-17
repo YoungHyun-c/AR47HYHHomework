@@ -44,34 +44,3 @@ bool Body::IsPlayerEat()
 {
 	return PlayerEat;
 }
-
-//void Body::CreateBody()
-//{
-//	std::vector<int2> Map;
-//	int2 MapSize = ConsoleGameScreen::GetMainScreen().GetScreenSize();
-//	int2 MapPos = { 0,0 };
-//	Map.reserve(MapSize.X * MapSize.Y);
-//
-//	for (int y = 0; y < MapSize.Y; y++)
-//	{
-//		for (int x = 0; x < MapSize.X; x++)
-//		{
-//			MapPos = { x, y };
-//			char temp = ConsoleGameScreen::GetMainScreen().GetScreenCharacter(MapPos);
-//			if (temp == 'a')
-//			{
-//				Map.push_back(MapPos);
-//			}
-//		}
-//	}
-//
-//	if (0 == Map.size())
-//	{
-//		system("cls");
-//		printf_s("%s\n", "You Win");
-//		exit(0);
-//	}
-//
-//	int Index = GameEngineRandom::MainRandom.RandomInt(0, Map.size() - 1);
-//	this->SetPos(Map[Index]);
-//}
