@@ -2,10 +2,10 @@
 #include <conio.h>
 #include <Windows.h>
 #include <GameEngineConsole/ConsoleGameScreen.h>
-#include "ConsoleObjectManager.h"
+#include <GameEngineConsole/ConsoleObjectManager.h>
 #include "Bomb.h"
 #include "GameEnum.h"
-#include "ConsoleObjectManager.h"
+#include "Item.h"
 
 bool Player::IsGameUpdate = true;
 
@@ -17,7 +17,6 @@ Player::Player()
 
 bool Player::IsBomb(int2 _NextPos)
 {
-	// 폭탄이 설치되었다면 못통과하게 만들어놓으세요.
 	std::list<ConsoleGameObject*>& BombGroup
 		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
 	
@@ -42,23 +41,33 @@ bool Player::IsBomb(int2 _NextPos)
 	}
 
 	return false;
-
-	// 내 풀이
-	//for (int i = 0; i < BombGroup.Count(); i++)
-	//{
-	//	if (nullptr == BombGroup[i])
-	//	{
-	//		continue;
-	//	}
-
-	//	if (_NextPos.Check(BombGroup[i]->GetPos()))
-	//	{
-	//		return true;
-	//	}
-	//}
-	//
-	//return false;
 }
+
+bool Player::IsItem(int2 _NextPos)
+{
+	std::list<ConsoleGameObject*>& ItemGroup
+		= ConsoleObjectManager::GetGroup(ObjectOrder::Item);
+
+	for (ConsoleGameObject* Ptk : ItemGroup)
+	{
+
+		if (nullptr == Ptk)
+		{
+			continue;
+		}
+
+		int2 ItemGroup = Ptk->GetPos();
+		if (_NextPos == ItemGroup)
+		{
+			Ptk->Death();
+			//Item* NewItem = ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item);
+			return true;
+		}
+	}
+
+	return false;
+}
+
 
 void Player::Update()
 {
@@ -112,15 +121,10 @@ void Player::Update()
 	case 'f':
 	case 'F':
 	{
-		// 여기 이상황에서 보면
-		// ConsoleObjectManager 있고
-		// Player
-		// 폭탄설치
+
 		Bomb* NewBomb = ConsoleObjectManager::CreateConsoleObject<Bomb>(ObjectOrder::Bomb);
 		NewBomb->Init(BombPower);
 		NewBomb->SetPos(GetPos());
-
-		// delte NewBomb 진짜 하면 안되는짓. ObjectManager에서 관리(삭제)하는 것인데 플레이어에서 또 삭제하는짓
 		break;
 	}
 	case 'q':
@@ -131,5 +135,9 @@ void Player::Update()
 	}
 	default:
 		break;
+	}
+	if (true == IsItem(Pos))
+	{
+		BombPower++;
 	}
 }

@@ -1,21 +1,24 @@
 #pragma once
+#include <GameEngineConsole/ConsoleGameObject.h>
+#include "Player.h"
 
-// Ό³Έν :
-class item
+class ConsoleGameScreen;
+class Item : public ConsoleGameObject
 {
 public:
 	// constructer destructer
-	item();
-	~item();
+	Item();
+	~Item();
 
 	// delete Function
-	item(const item& _Other) = delete;
-	item(item&& _Other) noexcept = delete;
-	item& operator = (const item& _Other) = delete;
-	item& operator = (item&& _Other) noexcept = delete;
+	Item(const Item& _Other) = delete;
+	Item(Item&& _Other) noexcept = delete;
+	Item& operator = (const Item& _Other) = delete;
+	Item& operator = (Item&& _Other) noexcept = delete;
+
 
 protected:
-
+	void Update() override;
 private:
 
 };

@@ -1,6 +1,6 @@
 #pragma once
-#include <GameEngineConsole/GameEngineArray.h>
-#include <GameEngineConsole/ConsoleGameObject.h>
+#include "GameEngineArray.h"
+#include "ConsoleGameObject.h"
 #include <vector>
 #include <list>
 

@@ -157,11 +157,17 @@ public:
 		
 		ListNode* NextNode = StartNode->Next;
 
-		StartNode->Next = NewListNode;
+		// 내풀이
+		/*StartNode->Next = NewListNode;
 		NewListNode->Next = NextNode;
 
 		NextNode->Prev = NewListNode;
+		NewListNode->Prev = StartNode;*/
+
+		NextNode->Prev = NewListNode;
+		StartNode->Next = NewListNode;
 		NewListNode->Prev = StartNode;
+		NewListNode->Next = NextNode;
 		
 	}
 

@@ -32,6 +32,8 @@ public:
 
 	void SetScreenCharacter(const int2& _Pos, char _Ch);
 
+	char GetScreenCharacter(const int2& _Pos) const;
+
 protected:
 
 private:

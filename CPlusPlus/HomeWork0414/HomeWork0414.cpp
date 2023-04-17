@@ -2,10 +2,33 @@
 //
 
 #include <iostream>
+#include <GameEngineBase/GameEngineDebug.h>
+#include <GameEngineConsole/ConsoleGameScreen.h>
+#include <GameEngineConsole/ConsoleGameObject.h>
+#include <conio.h>
+#include <GameEngineConsole/ConsoleObjectManager.h>
+#include <GameEngineBase/GameEngineRandom.h>
 
+#include "Head.h"
+#include "Body.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+	GameEngineDebug::LeckCheck();
+	int2 ScreenSize = { 6, 6 };
+	ConsoleGameScreen::GetMainScreen().SetScreenSize(ScreenSize);
+	ConsoleObjectManager::CreateConsoleObject<Head>(0);
+	ConsoleObjectManager::CreateConsoleObject<Body>(1);
+
+
+	while (true == Head::IsPlay)
+	{
+		ConsoleObjectManager::ConsoleAllObjectUpdate();
+		ConsoleObjectManager::ConsoleAllObjectRender();
+		ConsoleObjectManager::ConsoleAllObjectRelease();
+
+		Sleep(200);
+	}
+	ConsoleObjectManager::ConsoleAllObjectDelete();
 }
 
 // 1번째

@@ -44,6 +44,8 @@ public:
 	virtual void Update();
 	virtual void Render();
 	
+	virtual bool IsPlayerEat();
+
 protected:
 	int2 Pos;
 

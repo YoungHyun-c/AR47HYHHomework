@@ -6,16 +6,16 @@ class Player : public ConsoleGameObject
 {
 public:
 	static bool IsGameUpdate;
-	// constructer destructer
 
 	Player();
 	void Update() override;
 
 	bool IsBomb(int2 _NextPos);
+	bool IsItem(int2 _NextPos);
 
 protected:
 
 private:
-	int BombPower = 5;
+	int BombPower = 1;
 };
 

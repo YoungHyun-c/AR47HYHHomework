@@ -28,10 +28,3 @@ private:
 
 };
 
-
-// ≥ª«Æ¿Ã
-//private:
-//	int BombCount = 10;
-//	int BombMax = 1;
-//};
-

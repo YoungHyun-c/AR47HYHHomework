@@ -140,10 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bomb.cpp" />
-    <ClCompile Include="ConsoleObjectManager.cpp" />
     <ClCompile Include="GameEnum.cpp" />
     <ClCompile Include="HomeWork0413.cpp" />
-    <ClCompile Include="item.cpp">
+    <ClCompile Include="Item.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -151,9 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomb.h" />
-    <ClInclude Include="ConsoleObjectManager.h" />
     <ClInclude Include="GameEnum.h" />
-    <ClInclude Include="item.h">
+    <ClInclude Include="Item.h">
       <SubType>
       </SubType>
     </ClInclude>
