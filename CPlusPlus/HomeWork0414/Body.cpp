@@ -44,3 +44,4 @@ bool Body::IsPlayerEat()
 {
 	return PlayerEat;
 }
+
