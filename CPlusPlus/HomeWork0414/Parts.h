@@ -1,5 +1,6 @@
 #pragma once
 #include <GameEngineConsole/ConsoleGameObject.h>
+#include <GameEngineBase/GameEngineDebug.h>
 
 class Body;
 class Parts : public ConsoleGameObject
@@ -15,15 +16,49 @@ public:
 	Parts& operator=(const Parts& _Other) = delete;
 	Parts& operator=(Parts&& _Other) noexcept = delete;
 
-	int2 GetBeforePos() const
+	inline Parts* GetLast()
 	{
-		return BeforePos;
+		if (nullptr == Next)
+		{
+			return this;
+		}
+
+		return Next->GetLast();
 	}
 
+	inline Parts* GetNext()
+	{
+		return Next;
+	}
+
+	inline void SetNext(Parts* _Next)
+	{
+		if (nullptr == _Next)
+		{
+			MsgBoxAssert("자신의 NextNode를 nullptr로 세팅하려고 했습니다.");
+		}
+		Next = _Next;
+	}
+
+	inline int2 GetPrevPos()
+	{
+		return PrevPos;
+	}
+
+	inline void SetPos(const int2& _Value) override
+	{
+		PrevPos = GetPos();
+		ConsoleGameObject::SetPos(_Value);
+	}
+
+	void NextMove();
+
 protected:
-	
-	Parts* Prev = nullptr;
-	Parts* Next = nullptr;
-	int2 BeforePos = { 0 , 0 };
+	void Update() override;
+
 private:
+	int2 PrevPos;
+
+	Parts* Prev;
+	Parts* Next;
 };

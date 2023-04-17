@@ -14,10 +14,13 @@ public:
 	Head& operator=(const Head& _Other) = delete;
 	Head& operator=(Head&& _Other) noexcept = delete;
 
-	void BodyCheck();
+	//void BodyCheck();
+
 	static bool IsPlay;
 protected:
 	void Update() override;
+	void IsBodyCheck();
+	void NewBodyCreateCheck();
 
 private:
 	int2 Dir = int2::Up;

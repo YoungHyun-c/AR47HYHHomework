@@ -16,12 +16,12 @@ public:
 	Body& operator=(const Body& _Other) = delete;
 	Body& operator=(Body&& _Other) noexcept = delete;
 
-	void Update() override;
+	/*void Update() override;
 	void CreateBody();
-	bool IsPlayerEat() override;
+	bool IsPlayerEat() override;*/
 
 protected:
 
 private:
-	bool PlayerEat = false;
+	//bool PlayerEat = false;
 };

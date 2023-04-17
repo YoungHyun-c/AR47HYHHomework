@@ -42,35 +42,60 @@ bool Player::IsBomb(int2 _NextPos)
 
 	return false;
 }
+//
+//bool Player::IsItem(int2 _NextPos)
+//{
+//	std::list<ConsoleGameObject*>& ItemGroup
+//		= ConsoleObjectManager::GetGroup(ObjectOrder::Item);
+//
+//	for (ConsoleGameObject* Ptk : ItemGroup)
+//	{
+//
+//		if (nullptr == Ptk)
+//		{
+//			continue;
+//		}
+//
+//		int2 ItemGroup = Ptk->GetPos();
+//		if (_NextPos == ItemGroup)
+//		{
+//			Ptk->Death();
+//			//Item* NewItem = ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item);
+//			return true;
+//		}
+//	}
+//
+//	return false;
+//}
 
-bool Player::IsItem(int2 _NextPos)
+bool Player::IsItemCheck()
 {
 	std::list<ConsoleGameObject*>& ItemGroup
 		= ConsoleObjectManager::GetGroup(ObjectOrder::Item);
 
-	for (ConsoleGameObject* Ptk : ItemGroup)
+	for (ConsoleGameObject* Ptr : ItemGroup)
 	{
-
-		if (nullptr == Ptk)
+		if (nullptr == Ptr)
 		{
 			continue;
 		}
 
-		int2 ItemGroup = Ptk->GetPos();
-		if (_NextPos == ItemGroup)
+		int2 ItemPos = Ptr->GetPos();
+		if (GetPos() == ItemPos)
 		{
-			Ptk->Death();
-			//Item* NewItem = ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item);
+			Ptr->Death();
 			return true;
 		}
 	}
-
 	return false;
 }
 
 
 void Player::Update()
 {
+
+	IsItemCheck();
+
 	if (0 == _kbhit())
 	{
 		return;
@@ -136,8 +161,10 @@ void Player::Update()
 	default:
 		break;
 	}
-	if (true == IsItem(Pos))
+
+	IsItemCheck();
+	/*if (true == IsItem(Pos))
 	{
 		BombPower++;
-	}
+	}*/
 }

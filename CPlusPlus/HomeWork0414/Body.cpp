@@ -19,29 +19,29 @@ Body::~Body()
 }
 
 
-void Body::Update()
-{
-	std::list<ConsoleGameObject*>& HeadGroup = ConsoleObjectManager::GetGroup(0);
-	ConsoleGameObject* Player = HeadGroup.front();
-	if (true == PlayerEat && nullptr == Prev)
-	{
-		BeforePos = GetPos();
-		SetPos(Player->GetPos());
-	}
-	else if (true == PlayerEat && nullptr != Prev)
-	{
-		BeforePos = GetPos();
-		SetPos(Prev->GetBeforePos());
-	}
-	else if (nullptr == Prev)
-	{
-		return;
-	}
-}
+//void Body::Update()
+//{
+//	std::list<ConsoleGameObject*>& HeadGroup = ConsoleObjectManager::GetGroup(0);
+//	ConsoleGameObject* Player = HeadGroup.front();
+//	if (true == PlayerEat && nullptr == Prev)
+//	{
+//		BeforePos = GetPos();
+//		SetPos(Player->GetPos());
+//	}
+//	else if (true == PlayerEat && nullptr != Prev)
+//	{
+//		BeforePos = GetPos();
+//		SetPos(Prev->GetBeforePos());
+//	}
+//	else if (nullptr == Prev)
+//	{
+//		return;
+//	}
+//}
 
-
-bool Body::IsPlayerEat()
-{
-	return PlayerEat;
-}
+//
+//bool Body::IsPlayerEat()
+//{
+//	return PlayerEat;
+//}
 

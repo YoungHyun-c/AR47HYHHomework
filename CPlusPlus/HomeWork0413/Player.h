@@ -11,7 +11,10 @@ public:
 	void Update() override;
 
 	bool IsBomb(int2 _NextPos);
-	bool IsItem(int2 _NextPos);
+	
+	//bool IsItem(int2 _NextPos);
+
+	bool IsItemCheck();
 
 protected:
 

@@ -8,16 +8,16 @@
 #include <conio.h>
 #include <GameEngineConsole/ConsoleObjectManager.h>
 #include <GameEngineBase/GameEngineRandom.h>
-
+#include "GameEnum.h"
 #include "Head.h"
 #include "Body.h"
 int main()
 {
 	GameEngineDebug::LeckCheck();
-	int2 ScreenSize = { 6, 6 };
+	int2 ScreenSize = { 10, 5 };
 	ConsoleGameScreen::GetMainScreen().SetScreenSize(ScreenSize);
-	ConsoleObjectManager::CreateConsoleObject<Head>(0);
-	ConsoleObjectManager::CreateConsoleObject<Body>(1);
+	ConsoleObjectManager::CreateConsoleObject<Head>(SnakeGameOrder::Head);
+	ConsoleObjectManager::CreateConsoleObject<Body>(SnakeGameOrder::Body);
 
 
 	while (true == Head::IsPlay)

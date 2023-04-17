@@ -4,13 +4,13 @@
 #include <list>
 #include <GameEngineConsole/ConsoleObjectManager.h>
 #include "Body.h"
+#include "GameEnum.h"
 
 bool Head::IsPlay = true;
 
-
 Head::Head()
 {
-	RenderChar = '@';
+	RenderChar = '$';
 	SetPos(ConsoleGameScreen::GetMainScreen().GetScreenSize().Half());
 }
 
@@ -19,34 +19,77 @@ Head::~Head()
 
 }
 
-void Head::BodyCheck()
-{
-	std::list<ConsoleGameObject*>& BodyGroup = ConsoleObjectManager::GetGroup(1);
+//void Head::BodyCheck()
+//{
+//	std::list<ConsoleGameObject*>& BodyGroup = ConsoleObjectManager::GetGroup(1);
+//
+//	std::list<ConsoleGameObject*>::iterator Start = BodyGroup.begin();
+//	std::list<ConsoleGameObject*>::iterator End = BodyGroup.end();
+//	for (; Start != End; ++Start)
+//	{
+//		if (nullptr == *Start)
+//		{
+//			continue;
+//		}
+//		ConsoleGameObject* CurBody = *Start;
+//		int2 CurBodyPos = CurBody->GetPos();
+//		if (GetPos() == CurBodyPos && false == CurBody->IsPlayerEat())
+//		{
+//			CurBody->Death();
+//			Body* NewBody = ConsoleObjectManager::CreateConsoleObject<Body>(1);
+//		}
+//		else if (GetPos() == CurBodyPos && true == CurBody->IsPlayerEat())
+//		{
+//			IsPlay = false;
+//		}
+//	}
+//}
 
-	std::list<ConsoleGameObject*>::iterator Start = BodyGroup.begin();
-	std::list<ConsoleGameObject*>::iterator End = BodyGroup.end();
-	for (; Start != End; ++Start)
+void Head::IsBodyCheck()
+{
+	std::list<ConsoleGameObject*>& BodyGroup
+		= ConsoleObjectManager::GetGroup(SnakeGameOrder::Body);
+
+	for (ConsoleGameObject* BodyPtr : BodyGroup)
 	{
-		if (nullptr == *Start)
+		if (nullptr == BodyPtr)
 		{
 			continue;
 		}
-		ConsoleGameObject* CurBody = *Start;
-		int2 CurBodyPos = CurBody->GetPos();
-		if (GetPos() == CurBodyPos && false == CurBody->IsPlayerEat())
+
+		int2 BodyPos = BodyPtr->GetPos();
+		if (GetPos() == BodyPos)
 		{
-			CurBody->Death();
-			Body* NewBody = ConsoleObjectManager::CreateConsoleObject<Body>(1);
-		}
-		else if (GetPos() == CurBodyPos && true == CurBody->IsPlayerEat())
-		{
-			IsPlay = false;
+			Parts* BodyPart = dynamic_cast<Parts*>(BodyPtr);
+
+			if (nullptr == BodyPtr)
+			{
+				MsgBoxAssert("바디그룹 쪽에 바디가 아닌 객체가 들어왔습니다.");
+				return;
+			}
+
+			Parts* Last = GetLast();
+			
+			// int2 PrevPos = GetPrevPos();
+			// BodyPart->SetPos(PrevPos);
+			// ?? BodyPart
+			Last->SetNext(BodyPart);
+			ConsoleObjectManager::CreateConsoleObject<Body>(SnakeGameOrder::Body);
+			return;
+
 		}
 	}
 }
 
+void Head::NewBodyCreateCheck()
+{
+
+}
+
 void Head::Update()
 {
+	this;
+
 	if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(GetPos()))
 	{
 		IsPlay = false;
@@ -54,8 +97,9 @@ void Head::Update()
 
 	if (0 == _kbhit())
 	{
-		//SetPos(GetPos() + Dir);
-		BodyCheck();
+		// SetPos(GetPos() + Dir);
+		// IsBodyCheck();
+		// NewBodyCreateCheck();
 		return;
 	}
 
@@ -89,8 +133,29 @@ void Head::Update()
 		return;
 	}
 
+	// 내가 이렇게 움직였다고 친다면
+
+
 	SetPos(GetPos() + Dir);
-	BodyCheck();
+	IsBodyCheck();
+	NextMove();
+
+	/*Parts* CurPart = this;
+	while (true)
+	{
+		Parts* Next = CurPart->GetNext();
+
+		if (nullptr == Next)
+		{
+			break;
+		}
+		
+		Next->SetPos(CurPart->GetPrevPos());
+		CurPart = CurPart->GetNext();
+	}*/
+	
+	NewBodyCreateCheck();
+
 	if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(GetPos()))
 	{
 		IsPlay = false;
