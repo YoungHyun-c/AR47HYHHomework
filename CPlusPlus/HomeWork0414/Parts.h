@@ -21,7 +21,7 @@ public:
 	}
 
 protected:
-	//void Update() override;
+	
 	Parts* Prev = nullptr;
 	Parts* Next = nullptr;
 	int2 BeforePos = { 0 , 0 };

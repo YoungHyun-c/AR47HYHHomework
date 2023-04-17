@@ -11,8 +11,4 @@ Parts::~Parts()
 {
 }
 
-//void Parts::Update()
-//{
-//	ConsoleGameObject::Update();
-//}
 
