@@ -44,14 +44,12 @@ public:
 	virtual void Update();
 	virtual void Render();
 	
-	virtual bool IsPlayerEat();
+
 
 protected:
 	int2 Pos;
-
-	//int2 PosE;
-
-	char RenderChar = ' ';
+	wchar_t RenderChar = L'@';
+	wchar_t PrevRenderChar = L' ';
 
 private:
 	bool UpdateValue = true;

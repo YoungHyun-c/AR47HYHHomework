@@ -15,7 +15,7 @@ public:
 	int Y = 0;
 
 public:
-	inline int2 Half()
+	inline int2 Half() const
 	{
 		return { X / 2, Y / 2 };
 	}
@@ -52,6 +52,14 @@ public:
 		int2 ReturnValue = *this;
 		ReturnValue.X += _Other.X;
 		ReturnValue.Y += _Other.Y;
+		return ReturnValue;
+	}
+
+	int2 operator-(const int2& _Other) const
+	{
+		int2 ReturnValue = *this;
+		ReturnValue.X -= _Other.X;
+		ReturnValue.Y -= _Other.Y;
 		return ReturnValue;
 	}
 
