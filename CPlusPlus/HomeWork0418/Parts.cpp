@@ -13,23 +13,23 @@ Parts::~Parts()
 // ¡ã ¡å ¢¸ ¢º
 void Parts::Update()
 {
-	//Dir = GetPos() - PrevPos;
-	//if (Dir.X > 0)
-	//{
-	//	RenderChar = L'¢º';
-	//}
-	//else if (Dir.X < 0)
-	//{
-	//	RenderChar = L'¢¸';
-	//}
-	//else if (Dir.Y > 0)
-	//{
-	//	RenderChar = L'¡å';
-	//}
-	//else if (Dir.Y < 0)
-	//{
-	//	RenderChar = L'¡ã';
-	//}
+	Dir = GetPos() - PrevPos;
+	if (Dir.X > 0)
+	{
+		RenderChar = L'¢º';
+	}
+	else if (Dir.X < 0)
+	{
+		RenderChar = L'¢¸';
+	}
+	else if (Dir.Y > 0)
+	{
+		RenderChar = L'¡å';
+	}
+	else if (Dir.Y < 0)
+	{
+		RenderChar = L'¡ã';
+	}
 }
 
 void Parts::NextMove()
@@ -42,7 +42,7 @@ void Parts::NextMove()
 	}
 
 	Next->PrevRenderChar = Next->RenderChar;
-	Next->RenderChar = PrevRenderChar;
+	Next->RenderChar = RenderChar;
 	Next->SetPos(GetPrevPos());
 	return Next->NextMove();
 }
