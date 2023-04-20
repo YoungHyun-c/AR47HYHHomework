@@ -139,10 +139,10 @@ int main()
         GameEngineMap::iterator StartIter = Test.begin();
         GameEngineMap::iterator EndIter = Test.end();
 
-        for (; StartIter != EndIter; ++StartIter)
+        /*for (; StartIter != EndIter; ++StartIter)
         {
             std::cout << StartIter->first << std::endl;
-        }
+        }*/
     }
 }
 
