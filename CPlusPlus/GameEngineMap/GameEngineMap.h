@@ -88,6 +88,15 @@ public:
 
 				return nullptr;
 			}
+			else if (Pair.first < _Key)
+			{
+				if (nullptr != RightChild)
+				{
+					return RightChild->find(_Key);
+				}
+
+				return nullptr;
+			}
 		return this;
 		}
 	};
