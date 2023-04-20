@@ -84,6 +84,9 @@ int main()
             = Test.insert(std::pair<int, int>(15, rand()));
 
         std::map<int, int>::iterator FindIter = Test.find(15);
+        std::map<int, int>::iterator NextIter = Test.erase(FindIter);
+
+        int a = 0;
         // 탐색을 용이하게 하기 위해서 사용한다.
         // 사용성이 좋다.
 
@@ -114,7 +117,7 @@ int main()
         //    // Key값 바꾸기 금지
         //    Value.first = 20;
         //}
-        int a = 0;
+        int b = 0;
     }
 
     {
@@ -125,6 +128,7 @@ int main()
         Test.insert(GameEnginePair(1, rand()));
         Test.insert(GameEnginePair(2, rand()));
         Test.insert(GameEnginePair(15, rand()));
+        Test.insert(GameEnginePair(1, rand()));
 
         int a = 0;
 
