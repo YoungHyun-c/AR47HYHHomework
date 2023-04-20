@@ -100,25 +100,25 @@ void Head::Update()
 	case 'A':
 		Dir = int2::Left;
 		RenderChar = L'¢¸';
-		PrevRenderChar = RenderChar;
+		//PrevRenderChar = RenderChar;
 		break;
 	case 'd':
 	case 'D':
 		Dir = int2::Right;
 		RenderChar = L'¢º';
-		PrevRenderChar = RenderChar;
+		//PrevRenderChar = RenderChar;
 		break;
 	case 'w':
 	case 'W':
 		Dir = int2::Up;
 		RenderChar = L'¡ã';
-		PrevRenderChar = RenderChar;
+		//PrevRenderChar = RenderChar;
 		break;
 	case 's':
 	case 'S':
 		Dir = int2::Down;
 		RenderChar = L'¡å';
-		PrevRenderChar = RenderChar;
+		//PrevRenderChar = RenderChar;
 		break;
 	case 'q':
 	case 'Q':
