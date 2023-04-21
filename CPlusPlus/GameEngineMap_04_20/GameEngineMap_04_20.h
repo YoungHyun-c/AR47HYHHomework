@@ -71,18 +71,18 @@ public:
 
 			if (nullptr != DetachParent && this == DetachParent->LeftChild)
 			{
-				DetachParent->LeftChild = DetachRightChild;
-				if (nullptr != DetachRightChild)
+				DetachParent->LeftChild = DetachLeftChild;
+				if (nullptr != DetachLeftChild)
 				{
-					DetachRightChild->Parent = DetachParent;
+					DetachLeftChild->Parent = DetachParent;
 				}
 			}
 			else if (nullptr != DetachParent && this == DetachParent->RightChild)
 			{
-				DetachParent->RightChild = DetachLeftChild;
+				DetachParent->RightChild = DetachRightChild;
 				if (nullptr != DetachRightChild)
 				{
-					DetachLeftChild->Parent = DetachParent;
+					DetachRightChild->Parent = DetachParent;
 				}
 			}
 		}

@@ -80,10 +80,15 @@ int main()
         std::map<int, int>::iterator StartIter = Test.begin();
         std::map<int, int>::iterator EndIter = Test.end();
 
-        /*for (; StartIter != EndIter; ++StartIter)
+        for (; StartIter != EndIter; ++StartIter)
         {
 
             std::cout << StartIter->first << std::endl;
+        }
+
+        /*for (; EndIter != StartIter; --EndIter)
+        {
+            std::cout << EndIter->first << std::endl;
         }*/
 
         int b = 0;
@@ -142,6 +147,11 @@ int main()
         int a = 0;
     }
 }
+
+// 템플릿 만들기, Leck 없애기
+// 트리형 구조일때 전체 순회하는방법
+// FirstOrder(), MidOrder(), LastOrder()
+// 순회를 써서 Leck 없애기.
 
 // 맵은 단독으로 & 사용해서 불러 올 수 없다.
 // const를 붙여 안의 내용을 변경하지 않는다 선언해야 &참조 가능하다.
