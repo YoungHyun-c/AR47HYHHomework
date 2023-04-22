@@ -83,8 +83,8 @@ int main()
         std::pair<std::map<int, int>::iterator, bool> Value5
             = Test.insert(std::pair<int, int>(15, rand()));
 
-        std::map<int, int>::iterator FindIter = Test.find(15);
-        std::map<int, int>::iterator NextIter = Test.erase(FindIter);
+        //std::map<int, int>::iterator FindIter = Test.find(15);
+        //std::map<int, int>::iterator NextIter = Test.erase(FindIter);
 
         int a = 0;
         // 탐색을 용이하게 하기 위해서 사용한다.

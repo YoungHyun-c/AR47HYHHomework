@@ -134,15 +134,15 @@ int main()
         GameEngineMap::iterator StartIter = Test.begin();
         GameEngineMap::iterator EndIter = Test.end();
 
-       /* for (; StartIter != EndIter; ++StartIter)
+        for (; StartIter != EndIter; ++StartIter)
         {
             std::cout << StartIter->first << std::endl;
-        }*/
+        }
 
-        for (; EndIter != 0; --EndIter)
+        /*for (; EndIter != 0; --EndIter)
         {
             std::cout << EndIter->first << std::endl;
-        }
+        }*/
 
         int a = 0;
     }

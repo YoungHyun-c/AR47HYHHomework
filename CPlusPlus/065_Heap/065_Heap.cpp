@@ -20,10 +20,10 @@ int main()
     // new 한번이라도 쓰면 delete 하는 습관을 가져야 된다.
     Monster* PtrMonster = new Monster();
 
-    while (true)
+    /*while (true)
     {
 
-    }
+    }*/
 
     // 강제 종료의 경우에는 어쩔수없이 릭이 남을 수 있음.
     delete PtrMonster;
