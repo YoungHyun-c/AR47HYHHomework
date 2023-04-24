@@ -17,6 +17,8 @@ int main()
     GameEngineDebug::LeckCheck();
 
     {
+        // 2진 탐색트리
+        // 바이너리 서치트리
         GameEngineMap<int, int> Test;
         Test.insert(GameEnginePair<int, int>(10, rand()));
         Test.insert(GameEnginePair<int, int>(7, rand()));
