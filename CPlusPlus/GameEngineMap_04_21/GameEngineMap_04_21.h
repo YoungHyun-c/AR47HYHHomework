@@ -208,23 +208,25 @@ public:
 			{
 				RightChild->LastOrder();
 			}
+			delete this;
+
 			std::cout << Pair.first << std::endl;
 		}
 
-		~MapNode()
-		{
-			if (nullptr != LeftChild)
-			{
-				delete LeftChild;
-				LeftChild = nullptr;
-			}
-			if (nullptr != RightChild)
-			{
-				delete RightChild;
-				LeftChild = nullptr;
-			}
-			printf_s("지워진 값 : %d\n", Pair.first);
-		}
+		//~MapNode()
+		//{
+		//	if (nullptr != LeftChild)
+		//	{
+		//		delete LeftChild;
+		//		LeftChild = nullptr;
+		//	}
+		//	if (nullptr != RightChild)
+		//	{
+		//		delete RightChild;
+		//		LeftChild = nullptr;
+		//	}
+		//	printf_s("지워진 값 : %d\n", Pair.first);
+		//}
 
 
 	};
@@ -444,31 +446,31 @@ public:
 	void FirstOrder()
 	{
 		Root->FirstOrder();
-		if (Root != nullptr)
-		{
-			delete Root;
-			Root = nullptr;
-		}
+		//if (Root != nullptr)
+		//{
+		//	delete Root;
+		//	Root = nullptr;
+		//}
 	}
 
 	void MidOrder()
 	{
 		Root->MidOrder();
-		if (Root != nullptr)
-		{
-			delete Root;
-			Root = nullptr;
-		}
+		//if (Root != nullptr)
+		//{
+		//	delete Root;
+		//	Root = nullptr;
+		//}
 	}
 
 	void LastOrder()
 	{
 		Root->LastOrder();
-		if (Root != nullptr)
-		{
-			delete Root;
-			Root = nullptr;
-		}
+		//if (Root != nullptr)
+		//{
+		//	delete Root;
+		//	Root = nullptr;
+		//}
 	}
 
 private:

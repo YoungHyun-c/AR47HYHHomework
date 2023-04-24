@@ -54,12 +54,12 @@ int main()
         }
 
 
-        /*std::cout << "전위 순회" << std::endl;
-        Test.FirstOrder();*/
+        std::cout << "전위 순회" << std::endl;
+        Test.FirstOrder();
         std::cout << "중위 순회" << std::endl;
         Test.MidOrder();
-        /*std::cout << "후위 순회" << std::endl;
-        Test.LastOrder();*/
+        std::cout << "후위 순회" << std::endl;
+        Test.LastOrder();
 
 
         //GameEngineMap::iterator Start = Test.begin();

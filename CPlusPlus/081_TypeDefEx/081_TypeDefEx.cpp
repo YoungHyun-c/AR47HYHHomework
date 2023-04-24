@@ -3,11 +3,13 @@
 
 #include <iostream>
 
-typedef int MYINT, & MYTEst;
+typedef int MYINT, *MYTEST;
 
 
 int main()
 {
+    int* Ptr0 = nullptr;
+    MYTEST Ptr1 = nullptr;
     
-    // w_char
+    // wchar_t* LPWSTR;
 }
