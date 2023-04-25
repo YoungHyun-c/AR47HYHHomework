@@ -32,8 +32,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
     // 경고를 받지 않으려고 짠 코드이다.
-    // int Value = 10; 속성 -> C/C++ 일반 -> 경고수준 -> 모든경고로 했다면 초기화 하고 사용하지 않으면 경고뜸
-    // (Value); 사용했다고 치는 코드.
+    int Value = 10; //속성 -> C/C++ 일반 -> 경고수준 -> 모든경고로 했다면 초기화 하고 사용하지 않으면 경고뜸
+    (Value); //사용했다고 치는 코드.
 
     // TODO: 여기에 코드를 입력합니다.
     // 전역 문자열을 초기화합니다.
@@ -56,6 +56,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 기본 메시지 루프입니다:
     // 윈도우가 켜져있는 동안 계속 프로그램이 켜져있게 만들려고 while로 막아놓는다.
     // GetMessage는 윈도우에 무슨일이 생길때만 리턴되는 함수이다.
+
+    // 윈도우에 무슨일 이 생겼는지 체크.
     while (GetMessage(&msg, nullptr, 0, 0))
     {
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
@@ -81,10 +83,12 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
     // 윈도우 창을 띄우겠다는건 알겠는데, 윈도우 창의 설정을 어떻게 할지 정하는 곳.
 
+    //크기
     wcex.cbSize = sizeof(WNDCLASSEX);
 
     // 크기 바꾸면 다시 그려라.
     wcex.style          = CS_HREDRAW | CS_VREDRAW;
+
     // 핵심) 윈도우에 무슨일이 생기면 어떻게 해야해?
     // UI에서 사용한다고 했다. 함수포인터
     // 내가 너 대신 그 행동(함수)을 해줄께.
@@ -144,19 +148,18 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    // szWindowClass "AAAA" 형식 윈도우 만들어주세요.
    // szTitle  타이틀은 이걸로 해주세요
    // WS_OVERLAPPEDWINDOW /윈도우 스타일은 이걸로해주세요.
-   // CW_USEDEFAULT 위치 X
-   // 0 시작점위치 X
-   // CW_USEDEFAULT 위치 Y
+   // CW_USEDEFAULT 시작점 위치 X
    // 0 시작점위치 Y
-   // 
-   // nullptr
-   // nullptr
+   // CW_USEDEFAULT 끝점 위치 X
+   // 0 끝점위치 Y
+   // nullptr 모름
+   // nullptr 모름
    // hInstance 윈도우의 주인은?? hInstance
    // nullptr 
 
 
    HWND hWnd0 = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-       0, 100, CW_USEDEFAULT, 200, nullptr, nullptr, hInstance, nullptr);
+       0, 100, 400, 400, nullptr, nullptr, hInstance, nullptr);
 
 
    if (!hWnd)
@@ -183,6 +186,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
 //
 //
+int Value = 0;
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     // HWND hwnd <= 어떤 윈도우에 메시지가 왔는지 알려주는
@@ -218,7 +223,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // HDC hdc 내가 ~~~ 윈도우의 화면에 뭔가를 그리고 싶어요.
             // 화면에 그리기 위한 권한이다.
 
-            Rectangle(hdc, 100, 100, 200, 200);
+            Rectangle(hdc, 100 + Value, 100, 200 +Value, 200);
+
+            ++Value;
 
             EndPaint(hWnd, &ps);
         }
