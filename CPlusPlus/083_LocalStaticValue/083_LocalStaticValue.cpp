@@ -3,14 +3,21 @@
 
 #include <iostream>
 
+static int Value = 0;
+
 void TestFunction()
 {
-
+    std::cout << Value << std::endl;
+    ++Value;
 }
 
 int main()
 {
-    
+	for (size_t i = 0; i < 10; i++)
+	{
+		TestFunction();
+	}
+	return 0;
 }
 
 // 이 함수에서만 쓰고싶은 전역변수를 쓰고 싶을때
