@@ -1,11 +1,18 @@
 #include "Temp.h"
+#include <iostream>
 
-Temp::Temp()
+
+template<typename DataType>
+void Temp<DataType>::Function(DataType _Data)
 {
+	DataType type = _Data;
 
+	std::cout << _Data << std::endl;
 }
 
-Temp::~Temp()
+void Temp<DataType>::Function(DataType _Data)
 {
+	DataType type = _Data;
 
+	std::cout << _Data << std::endl;
 }

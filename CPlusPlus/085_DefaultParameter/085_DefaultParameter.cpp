@@ -6,15 +6,19 @@
 // 인자 값에 50 넣기.
 void Function(int _Value = 50)
 {
-
+    std::cout << _Value << std::endl;
 }
 
 void Function1(int _Test, int _Value = 50)
 {
-
+    std::cout << _Value << std::endl;
 }
 
 // 디폴트 인자는 무조건 인자의 가장 오른쪽 부터 만들 수 있기 때문에 안된다.
+//void Function0(int _Value = 50, int _Test)
+//{
+//    std::cout << _Value << std::endl;
+//}
 
 int main()
 {
@@ -30,4 +34,5 @@ int main()
 
     Function();
     Function1(10);
+
 }
