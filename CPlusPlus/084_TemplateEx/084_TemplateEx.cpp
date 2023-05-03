@@ -2,9 +2,15 @@
 //
 
 #include <iostream>
+#include "Temp.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
-}
+	Temp<int> NewTemp;
 
+	NewTemp.Function(10);
+
+	TestFunction<int>(2000);
+
+	std::cout << "Hello World\n";
+}
