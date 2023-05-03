@@ -248,10 +248,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "085_DefaultParameter", "085
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineMapEx", "GameEngineMapEx\GameEngineMapEx.vcxproj", "{9B5987DC-1091-4C63-A5BB-C8267FE35F00}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "086_Float", "086_Float\086_Float.vcxproj", "{ACEDF4CF-DA10-412C-BF97-D70B55437502}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "087_UnionAndDataPadding", "087_UnionAndDataPadding\087_UnionAndDataPadding.vcxproj", "{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -1148,22 +1144,6 @@ Global
 		{9B5987DC-1091-4C63-A5BB-C8267FE35F00}.Release|x64.Build.0 = Release|x64
 		{9B5987DC-1091-4C63-A5BB-C8267FE35F00}.Release|x86.ActiveCfg = Release|Win32
 		{9B5987DC-1091-4C63-A5BB-C8267FE35F00}.Release|x86.Build.0 = Release|Win32
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Debug|x64.ActiveCfg = Debug|x64
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Debug|x64.Build.0 = Debug|x64
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Debug|x86.ActiveCfg = Debug|Win32
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Debug|x86.Build.0 = Debug|Win32
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Release|x64.ActiveCfg = Release|x64
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Release|x64.Build.0 = Release|x64
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Release|x86.ActiveCfg = Release|Win32
-		{ACEDF4CF-DA10-412C-BF97-D70B55437502}.Release|x86.Build.0 = Release|Win32
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Debug|x64.ActiveCfg = Debug|x64
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Debug|x64.Build.0 = Debug|x64
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Debug|x86.ActiveCfg = Debug|Win32
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Debug|x86.Build.0 = Debug|Win32
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Release|x64.ActiveCfg = Release|x64
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Release|x64.Build.0 = Release|x64
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Release|x86.ActiveCfg = Release|Win32
-		{F9B85BAF-45ED-4DCC-99BB-8EC13EC4FF1A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
