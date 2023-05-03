@@ -69,8 +69,55 @@ public:
 	int B;
 };
 
+class MyUniClass
+{
+public:
+	union
+	{
+		int a;
+		int b;
+	};
+
+	class
+	{
+	public:
+		int x;
+		int y;
+	};
+};
+
+struct TestStruct
+{
+	int a;
+	int b;
+};
+
+union LastUnion
+{
+	// 300번지 8바이트
+	TestStruct ValueAB;
+
+	// 300번지 8바이트
+	__int64 Test;
+	//__int64 Test = 1;
+};
+
 int main()
 {
+	{
+		LastUnion New;
+
+		//New.ValueAB.a = 10;
+
+		//New.ValueAB.b;
+
+		//New.Test;
+
+		// size = 8
+		int size = sizeof(LastUnion);
+
+		int a = 0;
+	}
 
 	{
 		// 200번지에 만들어졌다고 치면.
