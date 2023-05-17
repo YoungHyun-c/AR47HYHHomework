@@ -8,11 +8,15 @@
 struct A
 {
     A(int) {}
+    A(int, int) {}
+    operator bool() const { return true; }
 };
 
 struct B
 {
     explicit B(int) {}
+    explicit B(int, int) {}
+    explicit operator bool() const { return true; }
 };
 
 int main()
