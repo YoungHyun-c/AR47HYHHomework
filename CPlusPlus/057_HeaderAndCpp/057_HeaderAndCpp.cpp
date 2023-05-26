@@ -16,7 +16,7 @@
 #include "Monster.h"
 // int Value = 10;
 
-// #pragma oncde
+// #pragma once
 // 한 cpp파일내의 헤더 중복제거
 
 

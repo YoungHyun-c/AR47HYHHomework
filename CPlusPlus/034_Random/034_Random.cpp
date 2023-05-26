@@ -30,6 +30,7 @@ int main()
     // 시간은 보통 8바이트 정수로 줍니다.
     unsigned int Test = time(0);
     srand(Test);
+    printf_s("%d\n", Test);
 
     while (true)
     {
