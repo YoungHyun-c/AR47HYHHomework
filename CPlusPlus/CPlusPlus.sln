@@ -266,6 +266,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "093_functional", "093_funct
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "094_Ramda", "094_Ramda\094_Ramda.vcxproj", "{7E1878A8-B177-4B90-8950-E56034198D97}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "095_Ramda2", "095_Ramda2\095_Ramda2.vcxproj", "{7A6A308A-E113-4644-929F-616310842FAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -1234,6 +1236,14 @@ Global
 		{7E1878A8-B177-4B90-8950-E56034198D97}.Release|x64.Build.0 = Release|x64
 		{7E1878A8-B177-4B90-8950-E56034198D97}.Release|x86.ActiveCfg = Release|Win32
 		{7E1878A8-B177-4B90-8950-E56034198D97}.Release|x86.Build.0 = Release|Win32
+		{7A6A308A-E113-4644-929F-616310842FAF}.Debug|x64.ActiveCfg = Debug|x64
+		{7A6A308A-E113-4644-929F-616310842FAF}.Debug|x64.Build.0 = Debug|x64
+		{7A6A308A-E113-4644-929F-616310842FAF}.Debug|x86.ActiveCfg = Debug|Win32
+		{7A6A308A-E113-4644-929F-616310842FAF}.Debug|x86.Build.0 = Debug|Win32
+		{7A6A308A-E113-4644-929F-616310842FAF}.Release|x64.ActiveCfg = Release|x64
+		{7A6A308A-E113-4644-929F-616310842FAF}.Release|x64.Build.0 = Release|x64
+		{7A6A308A-E113-4644-929F-616310842FAF}.Release|x86.ActiveCfg = Release|Win32
+		{7A6A308A-E113-4644-929F-616310842FAF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
